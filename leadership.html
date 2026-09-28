@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Leadership · Abdoulaye Koïta</title>
+<style>
+:root{
+  --ink:#0B1C2C;
+  --paper:#F7F5F0;
+  --slate:#3D5A6C;
+  --brass:#B4935A;
+  --line:rgba(11,28,44,.14);
+  --dim:#4B5A63;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:#17222B;
+  font:16px/1.6 Arial,sans-serif;
+}
+.nav{
+  position:sticky;
+  top:0;
+  background:rgba(247,245,240,.95);
+  border-bottom:1px solid var(--line);
+  padding:1rem 6vw;
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+}
+.nav a{
+  color:var(--slate);
+  text-decoration:none;
+  margin-left:1.2rem;
+}
+.nav strong{color:var(--ink)}
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:4rem 6vw;
+}
+.back{
+  display:inline-block;
+  color:var(--slate);
+  margin-bottom:2rem;
+}
+.eyebrow{
+  color:var(--brass);
+  font:12px monospace;
+}
+.grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  border-top:1px solid var(--line);
+  border-left:1px solid var(--line);
+}
+.cell{
+  padding:1.7rem;
+  border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+}
+.role{
+  font:600 1.1rem Georgia,serif;
+  color:var(--ink);
+}
+.org{
+  color:var(--slate);
+  margin:.4rem 0;
+}
+.desc{
+  color:var(--dim);
+}
+h1{
+  font-family:Georgia,serif;
+  color:var(--ink);
+}
+@media(max-width:700px){
+  .nav{display:block}
+  .nav a{display:inline-block;margin:0 .7rem .3rem 0}
+  .grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html"><strong>A. Koïta.</strong></a>
+  <div>
+    <a href="background.html">Background</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="honors.html">Honors</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<main>
+  <a class="back" href="index.html">← Back to home</a>
+  <p class="eyebrow">LEADERSHIP</p>
+  <h1>Student leadership</h1>
+  <p>Associative and institutional responsibilities carried out alongside the academic curriculum.</p>
+  
+  <div class="grid">
+    <div class="cell">
+      <div class="role">President</div>
+      <div class="org">ASEM, Association of Malian Interns, and Students in Morocco</div>
+      <div class="desc">Representing Malian students in Ben Guerir before the university and local authorities; team coordination, integration activities, crisis management, and partnerships.</div>
+    </div>
+    <div class="cell">
+      <div class="role">Ambassador of Mali</div>
+      <div class="org">UM6P Outreach and Admission Office</div>
+      <div class="desc">Building a network of international students representing Mali, contributing to the international visibility and outreach of the UM6P ecosystem.</div>
+    </div>
+    <div class="cell">
+      <div class="role">Student Representative</div>
+      <div class="org">Career Hub, UM6P</div>
+      <div class="desc">Voice of the school of applied and engineering physics within the Career Center; liaison between students and the career center.</div>
+    </div>
+    <div class="cell">
+      <div class="role">Secretary General</div>
+      <div class="org">Career Hub, UM6P</div>
+      <div class="desc">Student-led body serving as a liaison between the Career Center and the entire UM6P student body, representing student needs and aspirations.</div>
+    </div>
+    <div class="cell">
+      <div class="role">Founder / Manager</div>
+      <div class="org">BioCycle Solution Africa (BSA)</div>
+      <div class="desc">Association turning waste into biogas and digestate in Africa, in collaboration with partners, organizations, and investors.</div>
+    </div>
+  </div>
+</main>
+</body>
+</html>

@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact · Abdoulaye Koïta</title>
+<style>
+:root{
+  --ink:#0B1C2C;
+  --paper:#F7F5F0;
+  --slate:#3D5A6C;
+  --brass:#B4935A;
+  --line:rgba(11,28,44,.14);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:#17222B;
+  font:16px/1.6 Arial,sans-serif;
+}
+.nav{
+  position:sticky;
+  top:0;
+  background:rgba(247,245,240,.95);
+  border-bottom:1px solid var(--line);
+  padding:1rem 6vw;
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+}
+.nav a{
+  color:var(--slate);
+  text-decoration:none;
+  margin-left:1.2rem;
+}
+.nav strong{color:var(--ink)}
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:4rem 6vw;
+}
+.back{
+  display:inline-block;
+  color:var(--slate);
+  margin-bottom:2rem;
+}
+.eyebrow{
+  color:var(--brass);
+  font:12px monospace;
+}
+.links{
+  display:flex;
+  flex-wrap:wrap;
+  gap:2rem;
+  margin-top:2rem;
+}
+.link{
+  display:flex;
+  flex-direction:column;
+  color:var(--ink);
+  text-decoration:none;
+  border-bottom:0;
+}
+.label{
+  font:12px monospace;
+  color:#6B8494;
+}
+.value{
+  font:1.1rem Georgia,serif;
+  border-bottom:1px solid rgba(11,28,44,.28);
+  padding-bottom:2px;
+}
+h1{
+  font:500 2rem Georgia,serif;
+  color:var(--ink);
+}
+@media(max-width:700px){
+  .nav{display:block}
+  .nav a{display:inline-block;margin:0 .7rem .3rem 0}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html"><strong>A. Koïta.</strong></a>
+  <div>
+    <a href="background.html">Background</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="honors.html">Honors</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<main>
+  <a class="back" href="index.html">← Back to home</a>
+  <p class="eyebrow">CONTACT</p>
+  <h1>Contact</h1>
+  
+  <div class="links">
+    <a class="link" href="mailto:Abdoulaye.KOITA@um6p.ma">
+      <span class="label">Email</span>
+      <span class="value">Abdoulaye.KOITA@um6p.ma</span>
+    </a>
+    <a class="link" href="https://www.linkedin.com/in/koita-abdoulaye-a65aa42a9" target="_blank" rel="noopener">
+      <span class="label">LinkedIn</span>
+      <span class="value">/in/abdoulaye-koita</span>
+    </a>
+    <a class="link" href="tel:+212647281855">
+      <span class="label">Phone</span>
+      <span class="value">+212 6 47 28 18 55</span>
+    </a>
+    <span class="link">
+      <span class="label">Location</span>
+      <span class="value" style="border-bottom:0">Ben Guerir, Morocco</span>
+    </span>
+  </div>
+</main>
+</body>
+</html>

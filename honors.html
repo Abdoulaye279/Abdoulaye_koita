@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Honors · Abdoulaye Koïta</title>
+<style>
+:root{
+  --ink:#0B1C2C;
+  --paper:#F7F5F0;
+  --slate:#3D5A6C;
+  --brass:#B4935A;
+  --line:rgba(11,28,44,.14);
+  --dim:#4B5A63;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:#17222B;
+  font:16px/1.6 Arial,sans-serif;
+}
+.nav{
+  position:sticky;
+  top:0;
+  background:rgba(247,245,240,.95);
+  border-bottom:1px solid var(--line);
+  padding:1rem 6vw;
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+}
+.nav a{
+  color:var(--slate);
+  text-decoration:none;
+  margin-left:1.2rem;
+}
+.nav strong{color:var(--ink)}
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:4rem 6vw;
+}
+.back{
+  display:inline-block;
+  color:var(--slate);
+  margin-bottom:2rem;
+}
+.eyebrow{
+  color:var(--brass);
+  font:12px monospace;
+}
+.item{
+  display:grid;
+  grid-template-columns:90px 1fr auto;
+  gap:1rem;
+  padding:1.3rem 0;
+  border-bottom:1px solid var(--line);
+}
+.date,.org{
+  font:12px monospace;
+  color:var(--slate);
+}
+.title{
+  font:600 1.05rem Georgia,serif;
+  color:var(--ink);
+}
+.detail{
+  grid-column:2/-1;
+  color:var(--dim);
+}
+h1{
+  font-family:Georgia,serif;
+  color:var(--ink);
+}
+@media(max-width:700px){
+  .nav{display:block}
+  .nav a{display:inline-block;margin:0 .7rem .3rem 0}
+  .item{display:block}
+  .date,.org,.title{display:block;margin-bottom:.3rem}
+  .detail{margin-top:.5rem}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html"><strong>A. Koïta.</strong></a>
+  <div>
+    <a href="background.html">Background</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="honors.html">Honors</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<main>
+  <a class="back" href="index.html">← Back to home</a>
+  <p class="eyebrow">HONORS & RECOGNITION</p>
+  <h1>Honors</h1>
+  <p>Conference presentations, excellence scholarships, and academic distinctions.</p>
+  
+  <div class="item">
+    <span class="date">AUG 2026</span>
+    <span class="title">Oral Presentation</span>
+    <span class="org">ICPS 2026, Rabat</span>
+    <span class="detail">"Black Phosphorene-Based 2D SERS Sensor for Ultrasensitive Ammonium Nitrate Detection"</span>
+  </div>
+  
+  <div class="item">
+    <span class="date">AUG 2026</span>
+    <span class="title">Poster Presentation</span>
+    <span class="org">ICPS 2026, Rabat</span>
+  </div>
+  
+  <div class="item">
+    <span class="date">AUG 2026</span>
+    <span class="title">Millennium Fellow, Class of 2026</span>
+    <span class="org">MILLENNIUM CAMPUS NETWORK</span>
+    <span class="detail">International distinction recognizing civic leadership and social impact within a global cohort of students.</span>
+  </div>
+  
+  <div class="item">
+    <span class="date">AUG 2026</span>
+    <span class="title">Participant, U.S. &amp; MENA Region Virtual Exchange Program</span>
+    <span class="org">MILLENNIUM CAMPUS NETWORK</span>
+  </div>
+  
+  <div class="item">
+    <span class="date">DEC 2025</span>
+    <span class="title">Poster Presentation</span>
+    <span class="org">IAP Meeting, UM6P</span>
+    <span class="detail">RISE-X project presentation "Magneto-FTIR spectroscopy at low temperature." 2nd International Applied Physics Meeting, held December 1–5, 2025.</span>
+  </div>
+  
+  <div class="item">
+    <span class="date">JAN 2026</span>
+    <span class="title">Member of the Spanish Delegation, Model United Nations</span>
+    <span class="org">UM6P · UMY · SOLE</span>
+  </div>
+  
+  <div class="item">
+    <span class="date">AUG 2026</span>
+    <span class="title">Participation, India High School Exoplanet Data Challenge</span>
+    <span class="org">—</span>
+  </div>
+  
+  <div class="item">
+    <span class="date">SEP 2023</span>
+    <span class="title">First Prize Winner, Ségou Region, 2023 Malian Baccalaureate</span>
+    <span class="org">Ciwara School</span>
+  </div>
+  
+  <div class="item">
+    <span class="date">MAR 2022</span>
+    <span class="title">Encouragement Award, Excellence Promotion</span>
+    <span class="org">Educo Mali</span>
+  </div>
+</main>
+</body>
+</html>

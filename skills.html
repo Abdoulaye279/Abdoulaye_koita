@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skills · Abdoulaye Koïta</title>
+<style>
+:root{
+  --ink:#0B1C2C;
+  --paper:#F7F5F0;
+  --slate:#3D5A6C;
+  --brass:#B4935A;
+  --line:rgba(11,28,44,.14);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:#17222B;
+  font:16px/1.6 Arial,sans-serif;
+}
+.nav{
+  position:sticky;
+  top:0;
+  background:rgba(247,245,240,.95);
+  border-bottom:1px solid var(--line);
+  padding:1rem 6vw;
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+}
+.nav a{
+  color:var(--slate);
+  text-decoration:none;
+  margin-left:1.2rem;
+}
+.nav strong{color:var(--ink)}
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:4rem 6vw;
+}
+.back{
+  display:inline-block;
+  color:var(--slate);
+  margin-bottom:2rem;
+}
+.eyebrow{
+  color:var(--brass);
+  font:12px monospace;
+}
+.cols{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:2rem;
+}
+.group h2{
+  font:12px monospace;
+  color:var(--brass);
+  border-bottom:1px solid var(--line);
+  padding-bottom:.6rem;
+}
+.row{
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
+  padding:.5rem 0;
+  border-bottom:1px dotted var(--line);
+}
+.level{
+  font:12px monospace;
+  color:#6B8494;
+}
+h1{
+  font-family:Georgia,serif;
+  color:var(--ink);
+}
+@media(max-width:700px){
+  .nav{display:block}
+  .nav a{display:inline-block;margin:0 .7rem .3rem 0}
+  .cols{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav class="nav">
+  <a href="index.html"><strong>A. Koïta.</strong></a>
+  <div>
+    <a href="background.html">Background</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="honors.html">Honors</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="skills.html">Skills</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</nav>
+<main>
+  <a class="back" href="index.html">← Back to home</a>
+  <p class="eyebrow">TOOLS</p>
+  <h1>Technical skills</h1>
+  
+  <div class="cols">
+    <div class="group">
+      <h2>Programming</h2>
+      <div class="row"><span>Python</span><span class="level">Proficient</span></div>
+      <div class="row"><span>AI and Machine Learning</span><span class="level">Proficient</span></div>
+      <div class="row"><span>C++</span><span class="level">Proficient</span></div>
+      <div class="row"><span>SQL</span><span class="level">Proficient</span></div>
+      <div class="row"><span>MATLAB</span><span class="level">Proficient</span></div>
+      <div class="row"><span>MATHEMATICA WOLFRAM</span><span class="level">Proficient</span></div>
+      <div class="row"><span>Algorithms & data structures</span><span class="level">Proficient</span></div>
+    </div>
+    
+    <div class="group">
+      <h2>Research and method</h2>
+      <div class="row"><span>Scientific literature review</span></div>
+      <div class="row"><span>Project engineering</span></div>
+      <div class="row"><span>Management</span></div>
+      <div class="row"><span>Interdisciplinary teamwork</span></div>
+    </div>
+    
+    <div class="group">
+      <h2>Languages</h2>
+      <div class="row"><span>French</span><span class="level">Fluent</span></div>
+      <div class="row"><span>English</span><span class="level">Fluent</span></div>
+      <div class="row"><span>Bambara</span><span class="level">Native</span></div>
+      <div class="row"><span>Fula</span><span class="level">Native</span></div>
+    </div>
+  </div>
+</main>
+</body>
+</html>
