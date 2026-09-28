@@ -130,6 +130,10 @@ section { position: relative; }
   color: var(--ink);
   white-space: nowrap;
 }
+.nav-mark a {
+  border-bottom: none;
+  color: var(--ink);
+}
 .nav-mark span { color: var(--brass); }
 .nav-links {
   display: flex;
@@ -591,21 +595,41 @@ section { position: relative; }
   .nav { display: none; }
   .feature { background: white; color: black; }
 }
+
+/* ============ SECTION LINK ============ */
+.section-link {
+  display: inline-block;
+  padding: 1rem 2rem;
+  margin: 2rem 0;
+  background: var(--brass-soft);
+  color: var(--ink);
+  border-radius: 4px;
+  text-decoration: none;
+  border-bottom: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.section-link:hover {
+  background: var(--brass);
+  color: white;
+  border-bottom: none;
+}
 </style>
 </head>
 <body>
 
 <nav class="nav">
   <div class="nav-inner">
-    <div class="nav-mark">A. Koïta<span>.</span></div>
+    <div class="nav-mark"><a href="index.html">A. Koïta<span>.</span></a></div>
     <div class="nav-links">
-      <a href="#background">Background</a>
-      <a href="#research">Research</a>
-      <a href="#projects">Projects</a>
-      <a href="#honors">Honors</a>
-      <a href="#leadership">Leadership</a>
-      <a href="#skills">Skills</a>
-      <a href="#contact">Contact</a>
+      <a href="background.html">Background</a>
+      <a href="research.html">Research</a>
+      <a href="projects.html">Projects</a>
+      <a href="honors.html">Honors</a>
+      <a href="leadership.html">Leadership</a>
+      <a href="skills.html">Skills</a>
+      <a href="contact.html">Contact</a>
     </div>
   </div>
 </nav>
@@ -616,7 +640,7 @@ section { position: relative; }
     <div>
       <h1>Abdoulaye Koïta</h1>
       <p class="hero-dek">
-        As a 4th-year Engineering Physics student at UM6P, I leverage Python-based machine learning, C++, and research to solve complex industrial challenges. My technical expertise spans advanced mathematics, experimental physics, and data-driven analysis applied to sustainable technology and scientific problem-solving.
+        As a 4th-year Engineering Physics student at UM6P, I leverage Python-based machine learning, C++, and research to solve complex industrial challenges. My technical expertise spans advanced materials science, spectroscopy, and applied physics.
       </p>
       <div class="hero-meta">
         <div><b>Level</b> 4th-year engineering student (2nd year of the engineering cycle)</div>
@@ -632,288 +656,18 @@ section { position: relative; }
 
   <hr class="rule">
 
-  <section class="section" id="background">
-    <div class="section-head">
-      <span class="section-num">Background</span>
-      <h2 class="section-title">Academic background</h2>
-      <p class="section-sub">From a science exact baccalaureate in Mali to an engineering physics degree, via Moroccan preparatory classes.</p>
-    </div>
-    <div class="content-grid">
-      <div class="rail margin-note">Timeline</div>
-      <div class="timeline">
-        <div class="tl-item">
-          <div class="tl-date">SINCE 2025</div>
-          <div class="tl-role">Engineering degree, applied physics</div>
-          <div class="tl-org">UM6P, College of Physical Sciences and Engineering · Ben Guerir, Morocco</div>
-          <div class="tl-desc">Engineering physics training under the supervision of Jean Decker, covering Optical Engineering, Atomic Engineering, and Electronic Engineering.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-date">2023–2025</div>
-          <div class="tl-role">Preparatory classes for engineering schools</div>
-          <div class="tl-org">CPGE Moulay Ali Chérif · Morocco</div>
-          <div class="tl-desc">Admission certificate for engineering school: mathematics, physics, and engineering sciences.</div>
-        </div>
-        <div class="tl-item">
-          <div class="tl-date">2020–2023</div>
-          <div class="tl-role">Baccalaureate, science exact</div>
-          <div class="tl-org">Mariam Dembélé Pelengana High School · Mali</div>
-          <div class="tl-desc"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 </div>
 
-<div class="sheet">
-<section class="feature" id="research">
-  <div class="feature-inner">
-    <p class="feature-eyebrow">Flagship research project</p>
-    <h2>Black Phosphorene-Based 2D SERS Sensor for Ultrasensitive Ammonium Nitrate Detection</h2>
-    <div class="feature-grid" style="grid-template-columns: 1fr; max-width: 68ch;">
-      <div class="feature-body">
-        <p>
-          Co-author of a scientific paper on a surface-enhanced Raman spectroscopy (SERS) sensor built on a two-dimensional black phosphorene substrate, designed for the sensitive detection of ammonium nitrate.
-        </p>
-        <p>
-          The work covers characterization of the 2D material, analysis of the Raman signal enhancement mechanism, and physical interpretation of the experimental results, with a Results and Discussion section emphasizing sensitivity and practical relevance.
-        </p>
-        <p>
-          Presented at the <b style="color:var(--ink);">International Conference of Physics Students (ICPS) 2026</b> in Rabat, as both an oral presentation and a poster.
-        </p>
-        <p style="padding-top:0.4rem; border-top:1px solid var(--line); margin-top:1.3rem; font-size:0.88rem; color:var(--slate);">
-          <b style="color:var(--ink); font-weight:600;">Publications</b><br>
-          Abdoulaye Koita, Ferdinand Nouaye*, and Abdelouahed El Fatimy*, <i>"Black Phosphorene-Based 2D SERS Sensor for Ultrasensitive Ammonium Nitrate Detection."</i> College of Physical Sciences and Engineering, UM6P.<br>
-          Ferdinand Nouaye*, Abdoulaye Koita, Rajesh Desapogu, Jean Decker, Abdelmajid Ait Abdelkader, Petr Neugebauer, Rachid El Fatimy, and Abdelouahed El Fatimy*, <i>"SERS-Based Fertilizer Detection and Related Oxidation Studies."</i>
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-</div>
-
-<div class="sheet">
-
-  <section class="section" id="projects">
-    <div class="section-head">
-      <span class="section-num">Research and engineering</span>
-      <h2 class="section-title">Academic and applied projects</h2>
-      <p class="section-sub">Fundamental physics research, collaborative engineering projects, and impact-driven initiatives.</p>
-    </div>
-    <div class="content-grid">
-      <div class="rail margin-note">Selection</div>
-      <div class="proj-list">
-
-        <div class="proj-item">
-          <h3 class="proj-title">Theoretical inequalities for the 2D electron gas</h3>
-          <span class="proj-tag">Theoretical physics</span>
-          <p class="proj-desc">Proof of the diamagnetic inequality and other theoretical bounds on the kinetic energy density of a uniform 2D electron gas under a perpendicular magnetic field, with support from analytical and numerical methods.</p>
-        </div>
-
-        <div class="proj-item">
-          <h3 class="proj-title">BioCycle Solution Africa: rural biodigesters</h3>
-          <span class="proj-tag">Energy, impact</span>
-          <p class="proj-desc">Founder of a small-scale methanization initiative: design of a biodigestion circuit (anaerobic digester, compressor, gas filtration, storage), experimental protocol for gas quality checks, and a deployment strategy for rural communities.</p>
-        </div>
-
-        <div class="proj-item">
-          <h3 class="proj-title">Quantum dots: theory and applications</h3>
-          <span class="proj-tag">Nanotechnology</span>
-          <p class="proj-desc">Study of the electronic and optical properties of quantum dots: quantum confinement, applications in optoelectronics (LEDs, solar cells), and biomedical imaging. Group project with a full literature review and oral presentation.</p>
-        </div>
-
-        <div class="proj-item">
-          <h3 class="proj-title">Radiation protection study across four medical facilities</h3>
-          <span class="proj-tag">Internship, Iso Qual Tech</span>
-          <p class="proj-desc">Predictive radiation protection study following NF C 15-160 and Moroccan decree n° 2.23.151, covering conventional radiology, mammography, CT scanning, and panoramic dental imaging.</p>
-        </div>
-
-        <div class="proj-item">
-          <h3 class="proj-title">Smart proximity radar</h3>
-          <span class="proj-tag">Embedded systems</span>
-          <p class="proj-desc">Design and implementation of an obstacle-detection radar on an Arduino UNO with an HC-SR04 sensor, with LED and buzzer user feedback. Group project.</p>
-        </div>
-
-        <div class="proj-item">
-          <h3 class="proj-title">Quantization noise of an analog-to-digital converter</h3>
-          <span class="proj-tag">Signal processing</span>
-          <p class="proj-desc">Simulation model of quantization noise, analyzing its effect on signal-to-noise ratio (SNR) and effective number of bits (ENOB) across different input signals and quantization levels.</p>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="honors">
-    <div class="section-head">
-      <span class="section-num">Honors & recognition</span>
-      <h2 class="section-title">Honors</h2>
-      <p class="section-sub">Conference presentations, excellence scholarships, and academic distinctions.</p>
-    </div>
-    <div class="content-grid">
-      <div class="rail margin-note">2022–2026</div>
-      <div class="hon-list">
-
-        <div class="hon-item">
-          <span class="hon-date">AUG 2026</span>
-          <span class="hon-title">Oral Presentation</span>
-          <span class="hon-org">ICPS 2026, Rabat</span>
-          <span class="hon-detail">"Black Phosphorene-Based 2D SERS Sensor for Ultrasensitive Ammonium Nitrate Detection"</span>
-        </div>
-
-        <div class="hon-item">
-          <span class="hon-date">AUG 2026</span>
-          <span class="hon-title">Poster Presentation</span>
-          <span class="hon-org">ICPS 2026, Rabat</span>
-        </div>
-
-        <div class="hon-item">
-          <span class="hon-date">AUG 2026</span>
-          <span class="hon-title">Millennium Fellow, Class of 2026</span>
-          <span class="hon-org">MILLENNIUM CAMPUS NETWORK</span>
-          <span class="hon-detail">International distinction recognizing civic leadership and social impact within a global cohort of students.</span>
-        </div>
-
-        <div class="hon-item">
-          <span class="hon-date">AUG 2026</span>
-          <span class="hon-title">Participant, U.S. &amp; MENA Region Virtual Exchange Program</span>
-          <span class="hon-org">MILLENNIUM CAMPUS NETWORK</span>
-        </div>
-
-        <div class="hon-item">
-          <span class="hon-date">DEC 2025</span>
-          <span class="hon-title">Poster Presentation</span>
-          <span class="hon-org">IAP Meeting, UM6P</span>
-          <span class="hon-detail">RISE-X project presentation "Magneto-FTIR spectroscopy at low temperature." 2nd International Applied Physics Meeting, held December 1–5, 2025 under the theme "Era of Physics Innovations and Applied Research."</span>
-        </div>
-
-        <div class="hon-item">
-          <span class="hon-date">JAN 2026</span>
-          <span class="hon-title">Member of the Spanish Delegation, Model United Nations (Madrid Conference simulation)</span>
-          <span class="hon-org">UM6P · UMY · SOLE</span>
-        </div>
-
-        <div class="hon-item">
-          <span class="hon-date">AUG 2026</span>
-          <span class="hon-title">Participation, India High School Exoplanet Data Challenge</span>
-          <span class="hon-org">—</span>
-        </div>
-
-        <div class="hon-item">
-          <span class="hon-date">SEP 2023</span>
-          <span class="hon-title">First Prize Winner, Ségou Region, 2023 Malian Baccalaureate</span>
-          <span class="hon-org">Ciwara School</span>
-        </div>
-
-        <div class="hon-item">
-          <span class="hon-date">MAR 2022</span>
-          <span class="hon-title">Encouragement Award, Excellence Promotion, top students in the Ségou region</span>
-          <span class="hon-org">Educo Mali</span>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="leadership">
-    <div class="section-head">
-      <span class="section-num">Leadership</span>
-      <h2 class="section-title">Student leadership</h2>
-      <p class="section-sub">Associative and institutional responsibilities carried out alongside the academic curriculum.</p>
-    </div>
-    <div class="lead-grid">
-      <div class="lead-cell">
-        <div class="lead-role">President</div>
-        <div class="lead-org">ASEM, Association of Malian Interns, and Students in Morocco</div>
-        <div class="lead-desc">Representing Malian students in Ben Guerir before the university and local authorities; team coordination, integration activities, crisis management, and partnerships.</div>
-      </div>
-      <div class="lead-cell">
-        <div class="lead-role">Ambassador of Mali</div>
-        <div class="lead-org">UM6P Outreach and Admission Office</div>
-        <div class="lead-desc">Building a network of international students representing Mali, contributing to the international visibility and outreach of the UM6P ecosystem.</div>
-      </div>
-      <div class="lead-cell">
-        <div class="lead-role">Student Representative, College of Physical Sciences and Engineering</div>
-        <div class="lead-org">Career Hub, UM6P</div>
-        <div class="lead-desc">Voice of the school of applied and engineering physics within the Career Center; liaison between students and the career center.</div>
-      </div>
-      <div class="lead-cell">
-        <div class="lead-role">Secretary General</div>
-        <div class="lead-org">Career Hub, UM6P</div>
-        <div class="lead-desc">Student-led body serving as a liaison between the Career Center and the entire UM6P student body, representing student needs and aspirations.</div>
-      </div>
-      <div class="lead-cell">
-        <div class="lead-role">Founder / Manager</div>
-        <div class="lead-org">BioCycle Solution Africa (BSA)</div>
-        <div class="lead-desc">Association turning waste into biogas and digestate in Africa, in collaboration with partners, organizations, and investors.</div>
-      </div>
-      <div class="lead-cell"></div>
-    </div>
-  </section>
-
-  <section class="section" id="skills">
-    <div class="section-head">
-      <span class="section-num">Tools</span>
-      <h2 class="section-title">Technical skills</h2>
-    </div>
-    <div class="content-grid">
-      <div class="rail margin-note">Reference</div>
-      <div class="skill-cols">
-        <div>
-          <div class="skill-group-title">Programming</div>
-          <div class="skill-row"><span>Python</span><span class="skill-level">Proficient</span></div>
-          <div class="skill-row"><span>AI and Machine Learning</span><span class="skill-level">Proficient</span></div>
-          <div class="skill-row"><span>C++</span><span class="skill-level">Proficient</span></div>
-          <div class="skill-row"><span>SQL</span><span class="skill-level">Proficient</span></div>
-          <div class="skill-row"><span>MATLAB</span><span class="skill-level">Proficient</span></div>
-          <div class="skill-row"><span>MATHEMATICA WOLFRAM LANGUAGE</span><span class="skill-level">Proficient</span></div>
-          <div class="skill-row"><span>Algorithms and data structures</span><span class="skill-level">Proficient</span></div>
-        </div>
-        <div>
-          <div class="skill-group-title">Research and method</div>
-          <div class="skill-row"><span>Scientific literature review</span><span class="skill-level"></span></div>
-          <div class="skill-row"><span>Project engineering</span><span class="skill-level"></span></div>
-          <div class="skill-row"><span>Management</span><span class="skill-level"></span></div>
-          <div class="skill-row"><span>Interdisciplinary teamwork</span><span class="skill-level"></span></div>
-        </div>
-        <div>
-          <div class="skill-group-title">Languages</div>
-          <div class="skill-row"><span>French</span><span class="skill-level">Fluent</span></div>
-          <div class="skill-row"><span>English</span><span class="skill-level">Fluent</span></div>
-          <div class="skill-row"><span>Bambara</span><span class="skill-level">Native</span></div>
-          <div class="skill-row"><span>Fula</span><span class="skill-level">Native</span></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-</div>
-
-<div class="contact" id="contact">
-  <div class="contact-inner">
-    <h2>Contact</h2>
-    <div class="contact-links">
-      <a class="contact-link" href="mailto:Abdoulaye.KOITA@um6p.ma">
-        <span class="contact-link-label">Email</span>
-        <span class="contact-link-value">Abdoulaye.KOITA@um6p.ma</span>
-      </a>
-      <a class="contact-link" href="https://www.linkedin.com/in/koita-abdoulaye-a65aa42a9" target="_blank" rel="noopener">
-        <span class="contact-link-label">LinkedIn</span>
-        <span class="contact-link-value">/in/abdoulaye-koita</span>
-      </a>
-      <a class="contact-link" href="tel:+212647281855">
-        <span class="contact-link-label">Phone</span>
-        <span class="contact-link-value">+212 6 47 28 18 55</span>
-      </a>
-      <a class="contact-link" href="#" style="pointer-events:none;">
-        <span class="contact-link-label">Location</span>
-        <span class="contact-link-value" style="border-bottom:none;">Ben Guerir, Morocco</span>
-      </a>
-    </div>
-    <div class="footer-bar">
-      <span>Abdoulaye Koïta · College of Physical Sciences and Engineering, UM6P</span>
-      <span>Last updated · September 2026</span>
-    </div>
+<div class="sheet" style="text-align: center; padding: 4rem 6vw;">
+  <h2 style="font-family: var(--serif); font-size: 1.8rem; margin-bottom: 2rem;">Explore my portfolio</h2>
+  <div style="display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center;">
+    <a class="section-link" href="background.html">Background</a>
+    <a class="section-link" href="research.html">Research</a>
+    <a class="section-link" href="projects.html">Projects</a>
+    <a class="section-link" href="honors.html">Honors</a>
+    <a class="section-link" href="leadership.html">Leadership</a>
+    <a class="section-link" href="skills.html">Skills</a>
+    <a class="section-link" href="contact.html">Contact</a>
   </div>
 </div>
 
