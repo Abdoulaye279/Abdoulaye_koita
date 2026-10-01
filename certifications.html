@@ -2,727 +2,489 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Certifications · Abdoulaye Koïta</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --ink: #0B1C2C;
-  --paper: #F7F5F0;
-  --paper-dim: #EFEBE2;
-  --slate: #3D5A6C;
-  --slate-soft: #6B8494;
-  --brass: #B4935A;
-  --brass-soft: #D9C39C;
-  --line: rgba(11, 28, 44, 0.14);
-  --line-strong: rgba(11, 28, 44, 0.28);
-  --text: #17222B;
-  --text-dim: #4B5A63;
-  --serif: 'Spectral', Georgia, 'Times New Roman', serif;
-  --sans: 'IBM Plex Sans', Arial, sans-serif;
-  --mono: 'IBM Plex Mono', monospace;
+:root{
+  --ink:#0B1C2C;
+  --paper:#F7F5F0;
+  --slate:#3D5A6C;
+  --brass:#B4935A;
+  --line:rgba(11,28,44,.14);
+  --dim:#4B5A63;
 }
-* { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
-body {
-  margin: 0;
-  background: var(--paper);
-  color: var(--text);
-  font-family: var(--sans);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--paper);
+  color:#17222B;
+  font:16px/1.6 Arial,sans-serif;
 }
-a {
-  color: var(--slate);
-  text-decoration: none;
-  transition: color 0.2s ease, border-color 0.2s ease;
+.nav{
+  position:sticky;
+  top:0;
+  background:rgba(247,245,240,.95);
+  border-bottom:1px solid var(--line);
+  padding:1rem 6vw;
+  display:flex;
+  justify-content:space-between;
+  gap:1rem;
 }
-a:hover { color: var(--ink); }
-img { max-width: 100%; display: block; }
-
-.nav {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  background: rgba(247, 245, 240, 0.92);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid var(--line);
+.nav a{
+  color:var(--slate);
+  text-decoration:none;
+  margin-left:1.2rem;
 }
-.nav-inner {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0.85rem 6vw;
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.5rem;
+.nav strong{color:var(--ink)}
+main{
+  max-width:1000px;
+  margin:auto;
+  padding:4rem 6vw;
 }
-.nav-mark {
-  font-family: var(--serif);
-  font-size: 1.05rem;
-  font-weight: 600;
-  color: var(--ink);
-  white-space: nowrap;
+.back{
+  display:inline-block;
+  color:var(--slate);
+  margin-bottom:2rem;
+  text-decoration:none;
 }
-.nav-mark a { color: var(--ink); border: none; }
-.nav-mark span { color: var(--brass); }
-.nav-links {
-  display: flex;
-  gap: 1.6rem;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  font-size: 0.86rem;
+.eyebrow{
+  color:var(--brass);
+  font:12px monospace;
 }
-.nav-links a {
-  color: var(--text-dim);
-  border: none;
-  white-space: nowrap;
-  padding-bottom: 2px;
+h1{
+  font-family:Georgia,serif;
+  color:var(--ink);
+  margin:0 0 0.5rem;
 }
-.nav-links a:hover { color: var(--ink); }
-
-.sheet {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 6vw;
-}
-.section {
-  padding: 3.6rem 0;
-  border-top: 1px solid var(--line);
-}
-.section-head {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 2rem;
-  align-items: baseline;
-  margin-bottom: 2.4rem;
-}
-.section-num {
-  font-family: var(--mono);
-  font-size: 0.78rem;
-  color: var(--brass);
-  letter-spacing: 0.03em;
-}
-.section-title {
-  font-family: var(--serif);
-  font-weight: 500;
-  font-size: clamp(1.5rem, 2.6vw, 2rem);
-  color: var(--ink);
-  margin: 0;
-  grid-column: 2;
-}
-.section-sub {
-  grid-column: 2;
-  color: var(--text-dim);
-  margin: 0.6rem 0 0;
-  font-size: 0.98rem;
-  max-width: 60ch;
-}
-.content-grid {
-  display: grid;
-  grid-template-columns: 200px 1fr;
-  gap: 2rem;
-}
-.cert-filters {
-  display: flex;
-  gap: 0.8rem;
-  flex-wrap: wrap;
-  margin-bottom: 2rem;
-}
-.filter-btn {
-  padding: 0.55rem 1.2rem;
-  background: var(--paper-dim);
-  color: var(--text);
-  border: 1px solid var(--line-strong);
-  border-radius: 20px;
-  cursor: pointer;
-  font-family: var(--sans);
-  font-size: 0.9rem;
-  transition: all 0.2s ease;
-}
-.filter-btn:hover {
-  background: var(--brass-soft);
-  color: var(--ink);
-}
-.filter-btn.active {
-  background: var(--brass);
-  border-color: var(--brass);
-  color: white;
-}
-.cert-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.8rem;
-}
-.cert-card {
-  background: var(--paper);
-  border: 1px solid var(--line-strong);
-  border-radius: 8px;
-  overflow: hidden;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-  cursor: pointer;
-}
-.cert-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(11, 28, 44, 0.08);
-}
-.cert-visual {
-  width: 100%;
-  aspect-ratio: 4 / 3;
-  background: linear-gradient(135deg, var(--brass-soft), var(--paper-dim));
-  border-bottom: 1px solid var(--line);
-  display: grid;
-  place-items: center;
-  color: var(--ink);
-  font-family: var(--mono);
-  font-size: 0.74rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  text-align: center;
-  padding: 1rem;
-}
-.cert-visual img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-.cert-body {
-  padding: 1.3rem 1.2rem 1.1rem;
-}
-.cert-tag {
-  font-family: var(--mono);
-  font-size: 0.68rem;
-  color: var(--slate-soft);
-  text-transform: uppercase;
-  letter-spacing: 0.04em;
-  display: inline-block;
-  margin-bottom: 0.6rem;
-}
-.cert-title {
-  font-family: var(--serif);
-  font-size: 1.12rem;
-  color: var(--ink);
-  margin: 0 0 0.45rem;
-}
-.cert-issuer {
-  font-size: 0.9rem;
-  color: var(--slate);
-  margin: 0 0 0.8rem;
-}
-.cert-desc {
-  font-size: 0.92rem;
-  color: var(--text-dim);
-  margin: 0;
-  line-height: 1.6;
+.subtitle{
+  color:var(--dim);
+  margin:0 0 2rem;
+  max-width:60ch;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(4px);
-  z-index: 1000;
-  padding: 1rem;
-  align-items: center;
-  justify-content: center;
+/* Filter buttons */
+.filter-group{
+  display:flex;
+  gap:0.8rem;
+  flex-wrap:wrap;
+  margin-bottom:2rem;
 }
-.modal.show { display: flex; }
-.modal-content {
-  background: var(--paper);
-  border: 1px solid var(--line-strong);
-  border-radius: 8px;
-  max-width: 640px;
-  width: 100%;
-  max-height: 90vh;
-  overflow: auto;
-  box-shadow: 0 18px 60px rgba(0, 0, 0, 0.2);
+.filter-btn{
+  padding:0.5rem 1.2rem;
+  background:var(--paper);
+  color:var(--slate);
+  border:1px solid var(--line);
+  border-radius:4px;
+  cursor:pointer;
+  font:0.9rem Arial,sans-serif;
+  transition:all 0.2s ease;
 }
-.modal-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.4rem 1.5rem;
-  border-bottom: 1px solid var(--line);
+.filter-btn:hover{
+  background:var(--brass);
+  color:white;
+  border-color:var(--brass);
 }
-.modal-title {
-  margin: 0;
-  font-family: var(--serif);
-  font-size: 1.35rem;
-  color: var(--ink);
+.filter-btn.active{
+  background:var(--brass);
+  color:white;
+  border-color:var(--brass);
 }
-.modal-close {
-  background: none;
-  border: none;
-  font-size: 1.8rem;
-  color: var(--slate);
-  cursor: pointer;
-  line-height: 1;
+
+/* Certificate grid */
+.cert-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
+  gap:1.6rem;
 }
-.modal-body {
-  padding: 1.4rem 1.5rem 1.6rem;
+
+.cert-card{
+  background:var(--paper);
+  border:1px solid var(--line);
+  border-radius:4px;
+  overflow:hidden;
+  cursor:pointer;
+  transition:transform 0.2s ease, box-shadow 0.2s ease;
 }
-.modal-image {
-  width: 100%;
-  border: 1px solid var(--line-strong);
-  border-radius: 6px;
-  margin-bottom: 1.25rem;
+
+.cert-card:hover{
+  transform:translateY(-2px);
+  box-shadow:0 6px 16px rgba(11,28,44,0.1);
 }
-.modal-details {
-  display: grid;
-  gap: 1rem;
+
+.cert-thumb{
+  width:100%;
+  aspect-ratio:4/3;
+  background:#EFEBE2;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:0.75rem;
+  color:var(--slate);
+  font-weight:600;
+  letter-spacing:0.05em;
+  text-align:center;
+  padding:1rem;
 }
-.modal-detail {
-  display: grid;
-  grid-template-columns: 120px 1fr;
-  gap: 1rem;
+
+.cert-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:center;
 }
-.modal-detail-label {
-  font-family: var(--mono);
-  font-size: 0.73rem;
-  color: var(--brass);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: 700;
+
+.cert-body{
+  padding:1.2rem;
 }
-.modal-detail-value {
-  color: var(--text-dim);
-  font-size: 0.95rem;
-  line-height: 1.6;
+
+.cert-issuer{
+  font:12px monospace;
+  color:var(--brass);
+  margin-bottom:0.4rem;
+  text-transform:uppercase;
+  letter-spacing:0.02em;
 }
-@media (max-width: 720px) {
-  .section-head, .content-grid {
-    grid-template-columns: 1fr;
-    gap: 0.6rem;
-  }
-  .section-title, .section-sub { grid-column: 1; }
-  .nav-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  .nav-links { justify-content: flex-start; }
-  .modal-detail {
-    grid-template-columns: 1fr;
-    gap: 0.3rem;
-  }
+
+.cert-title{
+  font:600 1.05rem Georgia,serif;
+  color:var(--ink);
+  margin:0 0 0.3rem;
+}
+
+.cert-desc{
+  font:0.9rem Arial;
+  color:var(--dim);
+  margin:0;
+  line-height:1.5;
+}
+
+/* Lightbox modal */
+.lightbox{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.8);
+  z-index:9999;
+  align-items:center;
+  justify-content:center;
+  padding:1rem;
+}
+
+.lightbox.active{
+  display:flex;
+}
+
+.lightbox-content{
+  position:relative;
+  max-width:90vw;
+  max-height:90vh;
+  background:var(--paper);
+  border-radius:4px;
+  padding:2rem;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.lightbox-image{
+  max-width:100%;
+  max-height:75vh;
+  object-fit:contain;
+  border-radius:4px;
+  margin-bottom:1.5rem;
+}
+
+.lightbox-title{
+  font-family:Georgia,serif;
+  font-size:1.35rem;
+  font-weight:600;
+  color:var(--ink);
+  text-align:center;
+  margin:0 0 0.5rem;
+}
+
+.lightbox-meta{
+  display:flex;
+  gap:2rem;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin-bottom:1.5rem;
+}
+
+.lightbox-meta-item{
+  text-align:center;
+}
+
+.lightbox-meta-label{
+  font:11px monospace;
+  color:var(--brass);
+  text-transform:uppercase;
+  letter-spacing:0.03em;
+  display:block;
+  margin-bottom:0.3rem;
+}
+
+.lightbox-meta-value{
+  font:0.95rem Arial;
+  color:var(--dim);
+}
+
+.lightbox-desc{
+  font:0.95rem Arial;
+  color:var(--dim);
+  text-align:center;
+  line-height:1.6;
+  max-width:600px;
+  margin:0;
+}
+
+.lightbox-close{
+  position:absolute;
+  top:1.5rem;
+  right:1.5rem;
+  background:none;
+  border:none;
+  font-size:2rem;
+  color:var(--slate);
+  cursor:pointer;
+  line-height:1;
+  transition:color 0.2s ease;
+}
+
+.lightbox-close:hover{
+  color:var(--ink);
+}
+
+@media(max-width:700px){
+  .nav{display:block}
+  .nav a{display:inline-block;margin:0 .7rem .3rem 0}
+  main{padding:3rem 6vw}
+  .cert-grid{grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));gap:1rem}
+  .lightbox-content{padding:1.5rem}
+  .lightbox-close{top:1rem;right:1rem;font-size:1.5rem}
 }
 </style>
 </head>
 <body>
 <nav class="nav">
-  <div class="nav-inner">
-    <div class="nav-mark"><a href="index.html">A. Koïta<span>.</span></a></div>
-    <div class="nav-links">
-      <a href="background.html">Background</a>
-      <a href="research.html">Research</a>
-      <a href="projects.html">Projects</a>
-      <a href="honors.html">Honors</a>
-      <a href="leadership.html">Leadership</a>
-      <a href="skills.html">Skills</a>
-      <a href="certifications.html">Certifications</a>
-      <a href="contact.html">Contact</a>
-    </div>
+  <a href="index.html"><strong>A. Koïta.</strong></a>
+  <div>
+    <a href="background.html">Background</a>
+    <a href="research.html">Research</a>
+    <a href="projects.html">Projects</a>
+    <a href="honors.html">Honors</a>
+    <a href="leadership.html">Leadership</a>
+    <a href="skills.html">Skills</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="contact.html">Contact</a>
   </div>
 </nav>
 
-<div class="sheet">
-  <section class="section">
-    <div class="section-head">
-      <div class="section-num">05</div>
-      <div>
-        <h1 class="section-title">Certifications &amp; Courses</h1>
-        <p class="section-sub">Professional credentials and learning milestones in machine learning, nuclear engineering, scientific computing, and applied technical fields.</p>
+<main>
+  <a class="back" href="index.html">← Back to home</a>
+  <p class="eyebrow">PROFESSIONAL CREDENTIALS</p>
+  <h1>Certifications</h1>
+  <p class="subtitle">Course completions and professional certifications in machine learning, nuclear engineering, scientific computing, and applied research.</p>
+
+  <div class="filter-group">
+    <button class="filter-btn active" onclick="filterCerts('all')">All</button>
+    <button class="filter-btn" onclick="filterCerts('ml')">Machine Learning</button>
+    <button class="filter-btn" onclick="filterCerts('nuclear')">Nuclear</button>
+    <button class="filter-btn" onclick="filterCerts('programming')">Programming</button>
+    <button class="filter-btn" onclick="filterCerts('tools')">Computing Tools</button>
+  </div>
+
+  <div class="cert-grid" id="certGrid">
+    <!-- Deep Learning -->
+    <div class="cert-card" data-category="ml" onclick="openLightbox('Deep_Learning_NN.jpg', 'Deep Learning & Neural Networks', 'Wolfram', 'Advanced neural network architectures, optimization techniques, and practical AI applications.')">
+      <div class="cert-thumb"><img src="Deep_Learning_NN.jpg" alt="Deep Learning certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Wolfram</div>
+        <h3 class="cert-title">Deep Learning &amp; Neural Networks</h3>
+        <p class="cert-desc">Advanced neural networks and optimization.</p>
       </div>
     </div>
 
-    <div class="content-grid">
-      <div></div>
-      <div>
-        <div class="cert-filters">
-          <button class="filter-btn active" onclick="filterCerts('all')">All</button>
-          <button class="filter-btn" onclick="filterCerts('ml')">Machine Learning</button>
-          <button class="filter-btn" onclick="filterCerts('nuclear')">Nuclear</button>
-          <button class="filter-btn" onclick="filterCerts('programming')">Programming</button>
-          <button class="filter-btn" onclick="filterCerts('tools')">Computing Tools</button>
-        </div>
-
-        <div class="cert-grid" id="certGrid">
-          <article class="cert-card" data-category="ml" onclick="openModal('deep-learning')">
-            <div class="cert-visual"><img src="Deep_Learning_NN.jpg" alt="Deep Learning certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Machine Learning</span>
-              <h3 class="cert-title">Deep Learning &amp; Neural Networks</h3>
-              <p class="cert-issuer">Wolfram</p>
-              <p class="cert-desc">Advanced neural network architectures, optimization techniques, and practical AI applications.</p>
-            </div>
-          </article>
-
-          <article class="cert-card" data-category="ml" onclick="openModal('cnn-cv')">
-            <div class="cert-visual"><img src="Wolframe_CNN_computer_vision.png" alt="CNN certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Machine Learning</span>
-              <h3 class="cert-title">CNN &amp; Computer Vision</h3>
-              <p class="cert-issuer">Wolfram</p>
-              <p class="cert-desc">Convolutional neural networks applied to image recognition, segmentation, and visual analysis.</p>
-            </div>
-          </article>
-
-          <article class="cert-card" data-category="ml" onclick="openModal('game-theory')">
-            <div class="cert-visual"><img src="Wolframe_Game_Theory.jpg" alt="Game theory certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Mathematics</span>
-              <h3 class="cert-title">Game Theory</h3>
-              <p class="cert-issuer">Wolfram</p>
-              <p class="cert-desc">Strategic interactions, equilibrium concepts, and mathematical modeling of competitive systems.</p>
-            </div>
-          </article>
-
-          <article class="cert-card" data-category="ml" onclick="openModal('intro-game-theory')">
-            <div class="cert-visual"><img src="Wolframe_Intro_game_theory.jpg" alt="Intro game theory certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Mathematics</span>
-              <h3 class="cert-title">Introduction to Game Theory</h3>
-              <p class="cert-issuer">Wolfram</p>
-              <p class="cert-desc">Foundational concepts of strategic thinking, payoff analysis, and equilibrium reasoning.</p>
-            </div>
-          </article>
-
-          <article class="cert-card" data-category="nuclear" onclick="openModal('radiation-protection')">
-            <div class="cert-visual"><img src="IAEA_Radiation_Protection.jpg" alt="Radiation protection certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Nuclear Engineering</span>
-              <h3 class="cert-title">Radiation Protection</h3>
-              <p class="cert-issuer">IAEA</p>
-              <p class="cert-desc">International standards for radiation safety, exposure control, and occupational protection.</p>
-            </div>
-          </article>
-
-          <article class="cert-card" data-category="nuclear" onclick="openModal('workplace-monitoring')">
-            <div class="cert-visual"><img src="IAEA_workplace_monitoring.jpg" alt="Workplace monitoring certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Nuclear Engineering</span>
-              <h3 class="cert-title">Workplace Radiation Monitoring</h3>
-              <p class="cert-issuer">IAEA</p>
-              <p class="cert-desc">Monitoring procedures and measurement techniques for safe workplace radiation control.</p>
-            </div>
-          </article>
-
-          <article class="cert-card" data-category="nuclear" onclick="openModal('intro-nuclear')">
-            <div class="cert-visual"><img src="intro_nuclear_ing.jpg" alt="Intro nuclear engineering certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Nuclear Engineering</span>
-              <h3 class="cert-title">Introduction to Nuclear Engineering</h3>
-              <p class="cert-issuer">Wolfram</p>
-              <p class="cert-desc">Core concepts of reactor physics, nuclear energy systems, and applied nuclear science.</p>
-            </div>
-          </article>
-
-          <article class="cert-card" data-category="programming" onclick="openModal('cpp')">
-            <div class="cert-visual"><img src="C++.jpg" alt="C++ programming certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Programming</span>
-              <h3 class="cert-title">C++ Programming</h3>
-              <p class="cert-issuer">Wolfram</p>
-              <p class="cert-desc">Object-oriented programming, memory management, and performance-focused software development.</p>
-            </div>
-          </article>
-
-          <article class="cert-card" data-category="tools" onclick="openModal('matlab')">
-            <div class="cert-visual"><img src="matlab.jpg" alt="MATLAB certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Computing Tools</span>
-              <h3 class="cert-title">MATLAB</h3>
-              <p class="cert-issuer">Wolfram</p>
-              <p class="cert-desc">Scientific computing, numerical analysis, and engineering simulation workflows.</p>
-            </div>
-          </article>
-
-          <article class="cert-card" data-category="tools" onclick="openModal('simulink')">
-            <div class="cert-visual"><img src="simuluk.jpg" alt="Simulink certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Computing Tools</span>
-              <h3 class="cert-title">Simulink</h3>
-              <p class="cert-issuer">Wolfram</p>
-              <p class="cert-desc">Dynamic systems modeling and simulation for engineering applications and controls work.</p>
-            </div>
-          </article>
-
-          <article class="cert-card" data-category="tools" onclick="openModal('mathematica')">
-            <div class="cert-visual"><img src="mathematica_proficiency.jpg" alt="Mathematica proficiency certificate"></div>
-            <div class="cert-body">
-              <span class="cert-tag">Computing Tools</span>
-              <h3 class="cert-title">Mathematica Proficiency</h3>
-              <p class="cert-issuer">Wolfram</p>
-              <p class="cert-desc">Symbolic computation, data visualization, and research-oriented scientific programming.</p>
-            </div>
-          </article>
-        </div>
+    <!-- CNN Computer Vision -->
+    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_CNN_computer_vision.png', 'CNN & Computer Vision', 'Wolfram', 'Convolutional neural networks applied to image recognition, segmentation, and visual analysis.')">
+      <div class="cert-thumb"><img src="Wolframe_CNN_computer_vision.png" alt="CNN certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Wolfram</div>
+        <h3 class="cert-title">CNN &amp; Computer Vision</h3>
+        <p class="cert-desc">Image recognition and computer vision.</p>
       </div>
     </div>
-  </section>
-</div>
 
-<div id="deepLearningModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Deep Learning &amp; Neural Networks</h2>
-      <button class="modal-close" onclick="closeModal('deep-learning')">&times;</button>
+    <!-- CNN Daily Group Study -->
+    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_dealy_goup_study_CNN.png', 'CNN Daily Group Study', 'Wolfram', 'Collaborative learning program featuring daily deep-dives into CNN implementation and advanced techniques.')">
+      <div class="cert-thumb"><img src="Wolframe_dealy_goup_study_CNN.png" alt="CNN Group Study certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Wolfram</div>
+        <h3 class="cert-title">CNN Daily Group Study</h3>
+        <p class="cert-desc">Collaborative CNN learning program.</p>
+      </div>
     </div>
-    <div class="modal-body">
-      <img class="modal-image" src="Deep_Learning_NN.jpg" alt="Deep Learning certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">Wolfram</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Machine Learning</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Advanced coursework in neural network design, optimization, and applied machine learning techniques.</div></div>
+
+    <!-- Game Theory -->
+    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_Game_Theory.jpg', 'Game Theory', 'Wolfram', 'Strategic interactions, equilibrium concepts, and mathematical modeling of competitive systems.')">
+      <div class="cert-thumb"><img src="Wolframe_Game_Theory.jpg" alt="Game Theory certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Wolfram</div>
+        <h3 class="cert-title">Game Theory</h3>
+        <p class="cert-desc">Strategic reasoning and equilibrium analysis.</p>
+      </div>
+    </div>
+
+    <!-- Intro Game Theory -->
+    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_Intro_game_theory.jpg', 'Introduction to Game Theory', 'Wolfram', 'Foundational concepts of strategic thinking, payoff analysis, and equilibrium reasoning.')">
+      <div class="cert-thumb"><img src="Wolframe_Intro_game_theory.jpg" alt="Intro Game Theory certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Wolfram</div>
+        <h3 class="cert-title">Introduction to Game Theory</h3>
+        <p class="cert-desc">Foundational game theory concepts.</p>
+      </div>
+    </div>
+
+    <!-- Radiation Protection -->
+    <div class="cert-card" data-category="nuclear" onclick="openLightbox('IAEA_Radiation_Protection.jpg', 'Radiation Protection', 'IAEA', 'International standards for radiation safety, exposure control, and occupational protection.')">
+      <div class="cert-thumb"><img src="IAEA_Radiation_Protection.jpg" alt="Radiation Protection certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">IAEA</div>
+        <h3 class="cert-title">Radiation Protection</h3>
+        <p class="cert-desc">International radiation safety standards.</p>
+      </div>
+    </div>
+
+    <!-- Workplace Monitoring -->
+    <div class="cert-card" data-category="nuclear" onclick="openLightbox('IAEA_workplace_monitoring.jpg', 'Workplace Radiation Monitoring', 'IAEA', 'Monitoring procedures and measurement techniques for safe workplace radiation control.')">
+      <div class="cert-thumb"><img src="IAEA_workplace_monitoring.jpg" alt="Workplace Monitoring certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">IAEA</div>
+        <h3 class="cert-title">Workplace Radiation Monitoring</h3>
+        <p class="cert-desc">Radiation monitoring and compliance.</p>
+      </div>
+    </div>
+
+    <!-- Intro Nuclear Engineering -->
+    <div class="cert-card" data-category="nuclear" onclick="openLightbox('intro_nuclear_ing.jpg', 'Introduction to Nuclear Engineering', 'Wolfram', 'Core concepts of reactor physics, nuclear energy systems, and applied nuclear science.')">
+      <div class="cert-thumb"><img src="intro_nuclear_ing.jpg" alt="Nuclear Engineering certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Wolfram</div>
+        <h3 class="cert-title">Introduction to Nuclear Engineering</h3>
+        <p class="cert-desc">Nuclear engineering fundamentals.</p>
+      </div>
+    </div>
+
+    <!-- C++ Programming -->
+    <div class="cert-card" data-category="programming" onclick="openLightbox('C++.jpg', 'C++ Programming', 'Wolfram', 'Object-oriented programming, memory management, and performance-focused software development.')">
+      <div class="cert-thumb"><img src="C++.jpg" alt="C++ certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Wolfram</div>
+        <h3 class="cert-title">C++ Programming</h3>
+        <p class="cert-desc">Advanced C++ techniques and design.</p>
+      </div>
+    </div>
+
+    <!-- MATLAB -->
+    <div class="cert-card" data-category="tools" onclick="openLightbox('matlab.jpg', 'MATLAB', 'Wolfram', 'Scientific computing, numerical analysis, and engineering simulation workflows.')">
+      <div class="cert-thumb"><img src="matlab.jpg" alt="MATLAB certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Wolfram</div>
+        <h3 class="cert-title">MATLAB</h3>
+        <p class="cert-desc">Scientific computing and simulation.</p>
+      </div>
+    </div>
+
+    <!-- Simulink -->
+    <div class="cert-card" data-category="tools" onclick="openLightbox('simuluk.jpg', 'Simulink', 'Wolfram', 'Dynamic systems modeling and simulation for engineering applications and controls work.')">
+      <div class="cert-thumb"><img src="simuluk.jpg" alt="Simulink certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Wolfram</div>
+        <h3 class="cert-title">Simulink</h3>
+        <p class="cert-desc">Model-based design and simulation.</p>
+      </div>
+    </div>
+
+    <!-- Mathematica -->
+    <div class="cert-card" data-category="tools" onclick="openLightbox('mathematica_proficiency.jpg', 'Mathematica Proficiency', 'Wolfram', 'Symbolic computation, data visualization, and research-oriented scientific programming.')">
+      <div class="cert-thumb"><img src="mathematica_proficiency.jpg" alt="Mathematica certificate"></div>
+      <div class="cert-body">
+        <div class="cert-issuer">Wolfram</div>
+        <h3 class="cert-title">Mathematica Proficiency</h3>
+        <p class="cert-desc">Symbolic computation and visualization.</p>
       </div>
     </div>
   </div>
-</div>
+</main>
 
-<div id="cnnCvModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">CNN &amp; Computer Vision</h2>
-      <button class="modal-close" onclick="closeModal('cnn-cv')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <img class="modal-image" src="Wolframe_CNN_computer_vision.png" alt="CNN certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">Wolfram</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Machine Learning</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Convolutional neural networks applied to image understanding, object detection, and visual analysis.</div></div>
+<!-- Lightbox Modal -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
+    <img id="lightboxImage" class="lightbox-image" src="" alt="">
+    <h2 class="lightbox-title" id="lightboxTitle"></h2>
+    <div class="lightbox-meta">
+      <div class="lightbox-meta-item">
+        <span class="lightbox-meta-label">Issuer</span>
+        <div class="lightbox-meta-value" id="lightboxIssuer"></div>
       </div>
     </div>
-  </div>
-</div>
-
-<div id="gameTheoryModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Game Theory</h2>
-      <button class="modal-close" onclick="closeModal('game-theory')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <img class="modal-image" src="Wolframe_Game_Theory.jpg" alt="Game Theory certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">Wolfram</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Mathematics</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Foundation in strategic interactions, equilibrium analysis, and mathematical modeling of competitive systems.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="introGameTheoryModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Introduction to Game Theory</h2>
-      <button class="modal-close" onclick="closeModal('intro-game-theory')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <img class="modal-image" src="Wolframe_Intro_game_theory.jpg" alt="Intro Game Theory certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">Wolfram</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Mathematics</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Focused study on strategic reasoning, payoff matrices, and equilibrium thinking in interactive systems.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="radiationProtectModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Radiation Protection</h2>
-      <button class="modal-close" onclick="closeModal('radiation-protection')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <img class="modal-image" src="IAEA_Radiation_Protection.jpg" alt="Radiation Protection certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">IAEA</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Nuclear Engineering</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Training in radiation safety, occupational exposure control, and international protection standards.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="workplaceMonitoringModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Workplace Radiation Monitoring</h2>
-      <button class="modal-close" onclick="closeModal('workplace-monitoring')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <img class="modal-image" src="IAEA_workplace_monitoring.jpg" alt="Workplace Monitoring certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">IAEA</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Nuclear Engineering</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Focused practice in monitoring techniques and radiation safety compliance in workplace settings.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="introNuclearModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Introduction to Nuclear Engineering</h2>
-      <button class="modal-close" onclick="closeModal('intro-nuclear')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <img class="modal-image" src="intro_nuclear_ing.jpg" alt="Nuclear Engineering certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">Wolfram</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Nuclear Engineering</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Introduction to reactor physics, nuclear systems, and practical engineering applications in energy and radiation environments.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="cppModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">C++ Programming</h2>
-      <button class="modal-close" onclick="closeModal('cpp')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <img class="modal-image" src="C++.jpg" alt="C++ certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">Wolfram</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Programming</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Advanced C++ training covering memory management, object-oriented design, and performance-oriented programming structures.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="matlabModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">MATLAB</h2>
-      <button class="modal-close" onclick="closeModal('matlab')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <img class="modal-image" src="matlab.jpg" alt="MATLAB certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">Wolfram</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Computing Tools</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Numerical analysis, simulation workflows, engineering problem solving, and scientific data exploration.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="simulinkModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Simulink</h2>
-      <button class="modal-close" onclick="closeModal('simulink')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <img class="modal-image" src="simuluk.jpg" alt="Simulink certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">Wolfram</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Computing Tools</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Model-based design and simulation applied to control systems, dynamic behavior, and engineering analysis.</div></div>
-      </div>
-    </div>
-  </div>
-</div>
-
-<div id="mathematicaModal" class="modal">
-  <div class="modal-content">
-    <div class="modal-header">
-      <h2 class="modal-title">Mathematica Proficiency</h2>
-      <button class="modal-close" onclick="closeModal('mathematica')">&times;</button>
-    </div>
-    <div class="modal-body">
-      <img class="modal-image" src="mathematica_proficiency.jpg" alt="Mathematica certificate">
-      <div class="modal-details">
-        <div class="modal-detail"><div class="modal-detail-label">Issuer</div><div class="modal-detail-value">Wolfram</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Category</div><div class="modal-detail-value">Computing Tools</div></div>
-        <div class="modal-detail"><div class="modal-detail-label">Description</div><div class="modal-detail-value">Advanced use of Mathematica for symbolic computation, research analysis, and scientific visualization.</div></div>
-      </div>
-    </div>
+    <p class="lightbox-desc" id="lightboxDesc"></p>
   </div>
 </div>
 
 <script>
+function openLightbox(src, title, issuer, desc) {
+  const lightbox = document.getElementById('lightbox');
+  document.getElementById('lightboxImage').src = src;
+  document.getElementById('lightboxTitle').textContent = title;
+  document.getElementById('lightboxIssuer').textContent = issuer;
+  document.getElementById('lightboxDesc').textContent = desc;
+  lightbox.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// Close lightbox on background click
+document.getElementById('lightbox').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeLightbox();
+  }
+});
+
+// Close lightbox on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeLightbox();
+  }
+});
+
 function filterCerts(category) {
-  const items = document.querySelectorAll('.cert-card');
+  const cards = document.querySelectorAll('.cert-card');
   const buttons = document.querySelectorAll('.filter-btn');
-
+  
+  // Update button states
   buttons.forEach(btn => btn.classList.remove('active'));
-  const activeBtn = Array.from(buttons).find(btn => btn.textContent.toLowerCase().includes(category === 'all' ? 'all' : category));
-  if (activeBtn) activeBtn.classList.add('active');
-
-  items.forEach(item => {
-    const matches = category === 'all' || item.dataset.category === category;
-    item.style.display = matches ? '' : 'none';
+  event.target.classList.add('active');
+  
+  // Filter cards
+  cards.forEach(card => {
+    if (category === 'all' || card.dataset.category === category) {
+      card.style.display = '';
+    } else {
+      card.style.display = 'none';
+    }
   });
 }
-
-function openModal(id) {
-  const map = {
-    'deep-learning': 'deepLearningModal',
-    'cnn-cv': 'cnnCvModal',
-    'game-theory': 'gameTheoryModal',
-    'intro-game-theory': 'introGameTheoryModal',
-    'radiation-protection': 'radiationProtectModal',
-    'workplace-monitoring': 'workplaceMonitoringModal',
-    'intro-nuclear': 'introNuclearModal',
-    'cpp': 'cppModal',
-    'matlab': 'matlabModal',
-    'simulink': 'simulinkModal',
-    'mathematica': 'mathematicaModal'
-  };
-  const modal = document.getElementById(map[id]);
-  if (modal) {
-    modal.classList.add('show');
-    document.body.style.overflow = 'hidden';
-  }
-}
-
-function closeModal(id) {
-  const map = {
-    'deep-learning': 'deepLearningModal',
-    'cnn-cv': 'cnnCvModal',
-    'game-theory': 'gameTheoryModal',
-    'intro-game-theory': 'introGameTheoryModal',
-    'radiation-protection': 'radiationProtectModal',
-    'workplace-monitoring': 'workplaceMonitoringModal',
-    'intro-nuclear': 'introNuclearModal',
-    'cpp': 'cppModal',
-    'matlab': 'matlabModal',
-    'simulink': 'simulinkModal',
-    'mathematica': 'mathematicaModal'
-  };
-  const modal = document.getElementById(map[id]);
-  if (modal) {
-    modal.classList.remove('show');
-    document.body.style.overflow = '';
-  }
-}
-
-document.addEventListener('click', (event) => {
-  if (event.target.classList.contains('modal')) {
-    event.target.classList.remove('show');
-    document.body.style.overflow = '';
-  }
-});
-
-document.addEventListener('keydown', (event) => {
-  if (event.key === 'Escape') {
-    document.querySelectorAll('.modal.show').forEach(modal => {
-      modal.classList.remove('show');
-    });
-    document.body.style.overflow = '';
-  }
-});
 </script>
 </body>
 </html>
