@@ -46,20 +46,29 @@ main{
   color:var(--slate);
   margin-bottom:2rem;
   text-decoration:none;
+  transition:color 0.2s ease;
+}
+.back:hover{
+  color:var(--ink);
 }
 .eyebrow{
   color:var(--brass);
   font:12px monospace;
+  margin:0 0 1rem;
 }
 h1{
   font-family:Georgia,serif;
   color:var(--ink);
-  margin:0 0 0.5rem;
+  margin:0 0 1rem;
+  font-size:2rem;
+  font-weight:400;
 }
 .subtitle{
   color:var(--dim);
-  margin:0 0 2rem;
+  margin:0 0 2.5rem;
   max-width:60ch;
+  font-size:0.95rem;
+  line-height:1.7;
 }
 
 /* Filter buttons */
@@ -67,16 +76,17 @@ h1{
   display:flex;
   gap:0.8rem;
   flex-wrap:wrap;
-  margin-bottom:2rem;
+  margin-bottom:2.4rem;
 }
 .filter-btn{
-  padding:0.5rem 1.2rem;
+  padding:0.6rem 1.3rem;
   background:var(--paper);
   color:var(--slate);
   border:1px solid var(--line);
   border-radius:4px;
   cursor:pointer;
-  font:0.9rem Arial,sans-serif;
+  font:0.85rem Arial,sans-serif;
+  font-weight:500;
   transition:all 0.2s ease;
 }
 .filter-btn:hover{
@@ -93,8 +103,8 @@ h1{
 /* Certificate grid */
 .cert-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fill, minmax(240px, 1fr));
-  gap:1.6rem;
+  grid-template-columns:repeat(auto-fill, minmax(230px, 1fr));
+  gap:1.5rem;
 }
 
 .cert-card{
@@ -108,23 +118,24 @@ h1{
 
 .cert-card:hover{
   transform:translateY(-2px);
-  box-shadow:0 6px 16px rgba(11,28,44,0.1);
+  box-shadow:0 8px 20px rgba(11,28,44,0.1);
 }
 
 .cert-thumb{
   width:100%;
   aspect-ratio:4/3;
-  background:#EFEBE2;
+  background:linear-gradient(135deg,#D9C39C,#EFEBE2);
   overflow:hidden;
   display:flex;
   align-items:center;
   justify-content:center;
-  font-size:0.75rem;
-  color:var(--slate);
+  font-size:0.7rem;
+  color:var(--ink);
   font-weight:600;
-  letter-spacing:0.05em;
   text-align:center;
   padding:1rem;
+  text-transform:uppercase;
+  letter-spacing:0.05em;
 }
 
 .cert-thumb img{
@@ -141,15 +152,17 @@ h1{
 .cert-issuer{
   font:12px monospace;
   color:var(--brass);
-  margin-bottom:0.4rem;
+  margin-bottom:0.6rem;
   text-transform:uppercase;
-  letter-spacing:0.02em;
+  letter-spacing:0.04em;
+  display:block;
 }
 
 .cert-title{
   font:600 1.05rem Georgia,serif;
   color:var(--ink);
-  margin:0 0 0.3rem;
+  margin:0 0 0.4rem;
+  line-height:1.3;
 }
 
 .cert-desc{
@@ -188,57 +201,46 @@ h1{
   display:flex;
   flex-direction:column;
   align-items:center;
+  overflow:auto;
 }
 
 .lightbox-image{
   max-width:100%;
-  max-height:75vh;
+  max-height:70vh;
   object-fit:contain;
   border-radius:4px;
+  margin-bottom:1.8rem;
+}
+
+.lightbox-header{
+  text-align:center;
   margin-bottom:1.5rem;
+  width:100%;
 }
 
 .lightbox-title{
   font-family:Georgia,serif;
-  font-size:1.35rem;
+  font-size:1.4rem;
   font-weight:600;
   color:var(--ink);
-  text-align:center;
   margin:0 0 0.5rem;
+  line-height:1.3;
 }
 
-.lightbox-meta{
-  display:flex;
-  gap:2rem;
-  flex-wrap:wrap;
-  justify-content:center;
-  margin-bottom:1.5rem;
-}
-
-.lightbox-meta-item{
-  text-align:center;
-}
-
-.lightbox-meta-label{
+.lightbox-issuer{
   font:11px monospace;
   color:var(--brass);
   text-transform:uppercase;
-  letter-spacing:0.03em;
+  letter-spacing:0.04em;
   display:block;
-  margin-bottom:0.3rem;
-}
-
-.lightbox-meta-value{
-  font:0.95rem Arial;
-  color:var(--dim);
 }
 
 .lightbox-desc{
   font:0.95rem Arial;
   color:var(--dim);
   text-align:center;
-  line-height:1.6;
-  max-width:600px;
+  line-height:1.7;
+  max-width:70ch;
   margin:0;
 }
 
@@ -263,9 +265,12 @@ h1{
   .nav{display:block}
   .nav a{display:inline-block;margin:0 .7rem .3rem 0}
   main{padding:3rem 6vw}
-  .cert-grid{grid-template-columns:repeat(auto-fill, minmax(200px, 1fr));gap:1rem}
+  .cert-grid{grid-template-columns:repeat(auto-fill, minmax(180px, 1fr));gap:1.2rem}
+  .cert-thumb{aspect-ratio:4/3}
+  .cert-body{padding:1rem}
   .lightbox-content{padding:1.5rem}
   .lightbox-close{top:1rem;right:1rem;font-size:1.5rem}
+  .lightbox-image{max-height:60vh;margin-bottom:1.2rem}
 }
 </style>
 </head>
@@ -286,136 +291,137 @@ h1{
 
 <main>
   <a class="back" href="index.html">← Back to home</a>
+  
   <p class="eyebrow">PROFESSIONAL CREDENTIALS</p>
   <h1>Certifications</h1>
-  <p class="subtitle">Course completions and professional certifications in machine learning, nuclear engineering, scientific computing, and applied research.</p>
+  <p class="subtitle">Course completions and professional certifications in machine learning, nuclear engineering, scientific computing, and applied research methods.</p>
 
   <div class="filter-group">
     <button class="filter-btn active" onclick="filterCerts('all')">All</button>
     <button class="filter-btn" onclick="filterCerts('ml')">Machine Learning</button>
-    <button class="filter-btn" onclick="filterCerts('nuclear')">Nuclear</button>
+    <button class="filter-btn" onclick="filterCerts('nuclear')">Nuclear Engineering</button>
     <button class="filter-btn" onclick="filterCerts('programming')">Programming</button>
     <button class="filter-btn" onclick="filterCerts('tools')">Computing Tools</button>
   </div>
 
   <div class="cert-grid" id="certGrid">
     <!-- Deep Learning -->
-    <div class="cert-card" data-category="ml" onclick="openLightbox('Deep_Learning_NN.jpg', 'Deep Learning & Neural Networks', 'Wolfram', 'Advanced neural network architectures, optimization techniques, and practical AI applications.')">
-      <div class="cert-thumb"><img src="Deep_Learning_NN.jpg" alt="Deep Learning certificate"></div>
+    <div class="cert-card" data-category="ml" onclick="openLightbox('Deep_Learning_NN.jpg', 'Deep Learning & Neural Networks', 'Wolfram', 'Advanced neural network architectures, optimization techniques, and practical artificial intelligence applications.')">
+      <div class="cert-thumb"><img src="Deep_Learning_NN.jpg" alt="Deep Learning certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">Wolfram</div>
+        <span class="cert-issuer">Wolfram</span>
         <h3 class="cert-title">Deep Learning &amp; Neural Networks</h3>
-        <p class="cert-desc">Advanced neural networks and optimization.</p>
+        <p class="cert-desc">Advanced architectures and optimization.</p>
       </div>
     </div>
 
     <!-- CNN Computer Vision -->
-    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_CNN_computer_vision.png', 'CNN & Computer Vision', 'Wolfram', 'Convolutional neural networks applied to image recognition, segmentation, and visual analysis.')">
-      <div class="cert-thumb"><img src="Wolframe_CNN_computer_vision.png" alt="CNN certificate"></div>
+    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_CNN_computer_vision.png', 'CNN & Computer Vision', 'Wolfram', 'Convolutional neural networks applied to image recognition, object detection, segmentation, and visual analysis.')">
+      <div class="cert-thumb"><img src="Wolframe_CNN_computer_vision.png" alt="CNN certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">Wolfram</div>
+        <span class="cert-issuer">Wolfram</span>
         <h3 class="cert-title">CNN &amp; Computer Vision</h3>
-        <p class="cert-desc">Image recognition and computer vision.</p>
+        <p class="cert-desc">Image recognition and visual analysis.</p>
       </div>
     </div>
 
     <!-- CNN Daily Group Study -->
-    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_dealy_goup_study_CNN.png', 'CNN Daily Group Study', 'Wolfram', 'Collaborative learning program featuring daily deep-dives into CNN implementation and advanced techniques.')">
-      <div class="cert-thumb"><img src="Wolframe_dealy_goup_study_CNN.png" alt="CNN Group Study certificate"></div>
+    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_dealy_goup_study_CNN.png', 'CNN Daily Group Study', 'Wolfram', 'Collaborative learning program featuring daily deep-dives into CNN implementation, techniques, and applications.')">
+      <div class="cert-thumb"><img src="Wolframe_dealy_goup_study_CNN.png" alt="CNN Group Study certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">Wolfram</div>
+        <span class="cert-issuer">Wolfram</span>
         <h3 class="cert-title">CNN Daily Group Study</h3>
         <p class="cert-desc">Collaborative CNN learning program.</p>
       </div>
     </div>
 
     <!-- Game Theory -->
-    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_Game_Theory.jpg', 'Game Theory', 'Wolfram', 'Strategic interactions, equilibrium concepts, and mathematical modeling of competitive systems.')">
-      <div class="cert-thumb"><img src="Wolframe_Game_Theory.jpg" alt="Game Theory certificate"></div>
+    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_Game_Theory.jpg', 'Game Theory', 'Wolfram', 'Strategic interactions, Nash equilibrium concepts, and mathematical modeling of competitive systems and decision-making.')">
+      <div class="cert-thumb"><img src="Wolframe_Game_Theory.jpg" alt="Game Theory certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">Wolfram</div>
+        <span class="cert-issuer">Wolfram</span>
         <h3 class="cert-title">Game Theory</h3>
-        <p class="cert-desc">Strategic reasoning and equilibrium analysis.</p>
+        <p class="cert-desc">Strategic analysis and equilibrium.</p>
       </div>
     </div>
 
     <!-- Intro Game Theory -->
-    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_Intro_game_theory.jpg', 'Introduction to Game Theory', 'Wolfram', 'Foundational concepts of strategic thinking, payoff analysis, and equilibrium reasoning.')">
-      <div class="cert-thumb"><img src="Wolframe_Intro_game_theory.jpg" alt="Intro Game Theory certificate"></div>
+    <div class="cert-card" data-category="ml" onclick="openLightbox('Wolframe_Intro_game_theory.jpg', 'Introduction to Game Theory', 'Wolfram', 'Foundational concepts of strategic thinking, payoff matrices, dominant strategies, and equilibrium reasoning.')">
+      <div class="cert-thumb"><img src="Wolframe_Intro_game_theory.jpg" alt="Intro Game Theory certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">Wolfram</div>
-        <h3 class="cert-title">Introduction to Game Theory</h3>
+        <span class="cert-issuer">Wolfram</span>
+        <h3 class="cert-title">Intro to Game Theory</h3>
         <p class="cert-desc">Foundational game theory concepts.</p>
       </div>
     </div>
 
     <!-- Radiation Protection -->
-    <div class="cert-card" data-category="nuclear" onclick="openLightbox('IAEA_Radiation_Protection.jpg', 'Radiation Protection', 'IAEA', 'International standards for radiation safety, exposure control, and occupational protection.')">
-      <div class="cert-thumb"><img src="IAEA_Radiation_Protection.jpg" alt="Radiation Protection certificate"></div>
+    <div class="cert-card" data-category="nuclear" onclick="openLightbox('IAEA_Radiation_Protection.jpg', 'Radiation Protection', 'IAEA', 'International standards for radiation safety, dose limits, exposure control, and occupational health protection.')">
+      <div class="cert-thumb"><img src="IAEA_Radiation_Protection.jpg" alt="Radiation Protection certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">IAEA</div>
+        <span class="cert-issuer">IAEA</span>
         <h3 class="cert-title">Radiation Protection</h3>
-        <p class="cert-desc">International radiation safety standards.</p>
+        <p class="cert-desc">International safety standards.</p>
       </div>
     </div>
 
     <!-- Workplace Monitoring -->
-    <div class="cert-card" data-category="nuclear" onclick="openLightbox('IAEA_workplace_monitoring.jpg', 'Workplace Radiation Monitoring', 'IAEA', 'Monitoring procedures and measurement techniques for safe workplace radiation control.')">
-      <div class="cert-thumb"><img src="IAEA_workplace_monitoring.jpg" alt="Workplace Monitoring certificate"></div>
+    <div class="cert-card" data-category="nuclear" onclick="openLightbox('IAEA_workplace_monitoring.jpg', 'Workplace Radiation Monitoring', 'IAEA', 'Monitoring procedures, measurement techniques, and control strategies for safe workplace radiation management.')">
+      <div class="cert-thumb"><img src="IAEA_workplace_monitoring.jpg" alt="Workplace Monitoring certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">IAEA</div>
-        <h3 class="cert-title">Workplace Radiation Monitoring</h3>
-        <p class="cert-desc">Radiation monitoring and compliance.</p>
+        <span class="cert-issuer">IAEA</span>
+        <h3 class="cert-title">Workplace Monitoring</h3>
+        <p class="cert-desc">Radiation monitoring protocols.</p>
       </div>
     </div>
 
     <!-- Intro Nuclear Engineering -->
-    <div class="cert-card" data-category="nuclear" onclick="openLightbox('intro_nuclear_ing.jpg', 'Introduction to Nuclear Engineering', 'Wolfram', 'Core concepts of reactor physics, nuclear energy systems, and applied nuclear science.')">
-      <div class="cert-thumb"><img src="intro_nuclear_ing.jpg" alt="Nuclear Engineering certificate"></div>
+    <div class="cert-card" data-category="nuclear" onclick="openLightbox('intro_nuclear_ing.jpg', 'Introduction to Nuclear Engineering', 'Wolfram', 'Core concepts of reactor physics, nuclear energy systems, fission processes, and applied nuclear science.')">
+      <div class="cert-thumb"><img src="intro_nuclear_ing.jpg" alt="Nuclear Engineering certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">Wolfram</div>
-        <h3 class="cert-title">Introduction to Nuclear Engineering</h3>
+        <span class="cert-issuer">Wolfram</span>
+        <h3 class="cert-title">Intro to Nuclear Engineering</h3>
         <p class="cert-desc">Nuclear engineering fundamentals.</p>
       </div>
     </div>
 
     <!-- C++ Programming -->
-    <div class="cert-card" data-category="programming" onclick="openLightbox('C++.jpg', 'C++ Programming', 'Wolfram', 'Object-oriented programming, memory management, and performance-focused software development.')">
-      <div class="cert-thumb"><img src="C++.jpg" alt="C++ certificate"></div>
+    <div class="cert-card" data-category="programming" onclick="openLightbox('C++.jpg', 'C++ Programming', 'Wolfram', 'Object-oriented programming, memory management, pointers, and performance-focused software development.')">
+      <div class="cert-thumb"><img src="C++.jpg" alt="C++ certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">Wolfram</div>
+        <span class="cert-issuer">Wolfram</span>
         <h3 class="cert-title">C++ Programming</h3>
-        <p class="cert-desc">Advanced C++ techniques and design.</p>
+        <p class="cert-desc">Advanced C++ techniques.</p>
       </div>
     </div>
 
     <!-- MATLAB -->
-    <div class="cert-card" data-category="tools" onclick="openLightbox('matlab.jpg', 'MATLAB', 'Wolfram', 'Scientific computing, numerical analysis, and engineering simulation workflows.')">
-      <div class="cert-thumb"><img src="matlab.jpg" alt="MATLAB certificate"></div>
+    <div class="cert-card" data-category="tools" onclick="openLightbox('matlab.jpg', 'MATLAB', 'Wolfram', 'Scientific computing, numerical analysis, matrix operations, and engineering simulation workflows.')">
+      <div class="cert-thumb"><img src="matlab.jpg" alt="MATLAB certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">Wolfram</div>
+        <span class="cert-issuer">Wolfram</span>
         <h3 class="cert-title">MATLAB</h3>
-        <p class="cert-desc">Scientific computing and simulation.</p>
+        <p class="cert-desc">Scientific computing tools.</p>
       </div>
     </div>
 
     <!-- Simulink -->
-    <div class="cert-card" data-category="tools" onclick="openLightbox('simuluk.jpg', 'Simulink', 'Wolfram', 'Dynamic systems modeling and simulation for engineering applications and controls work.')">
-      <div class="cert-thumb"><img src="simuluk.jpg" alt="Simulink certificate"></div>
+    <div class="cert-card" data-category="tools" onclick="openLightbox('simuluk.jpg', 'Simulink', 'Wolfram', 'Dynamic systems modeling, block diagram design, and simulation for engineering applications and controls.')">
+      <div class="cert-thumb"><img src="simuluk.jpg" alt="Simulink certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">Wolfram</div>
+        <span class="cert-issuer">Wolfram</span>
         <h3 class="cert-title">Simulink</h3>
-        <p class="cert-desc">Model-based design and simulation.</p>
+        <p class="cert-desc">Model-based system design.</p>
       </div>
     </div>
 
     <!-- Mathematica -->
-    <div class="cert-card" data-category="tools" onclick="openLightbox('mathematica_proficiency.jpg', 'Mathematica Proficiency', 'Wolfram', 'Symbolic computation, data visualization, and research-oriented scientific programming.')">
-      <div class="cert-thumb"><img src="mathematica_proficiency.jpg" alt="Mathematica certificate"></div>
+    <div class="cert-card" data-category="tools" onclick="openLightbox('mathematica_proficiency.jpg', 'Mathematica Proficiency', 'Wolfram', 'Symbolic computation, algebraic manipulation, data visualization, and research-oriented scientific programming.')">
+      <div class="cert-thumb"><img src="mathematica_proficiency.jpg" alt="Mathematica certificate" loading="lazy"></div>
       <div class="cert-body">
-        <div class="cert-issuer">Wolfram</div>
+        <span class="cert-issuer">Wolfram</span>
         <h3 class="cert-title">Mathematica Proficiency</h3>
-        <p class="cert-desc">Symbolic computation and visualization.</p>
+        <p class="cert-desc">Symbolic computation tools.</p>
       </div>
     </div>
   </div>
@@ -426,12 +432,9 @@ h1{
   <div class="lightbox-content">
     <button class="lightbox-close" onclick="closeLightbox()">&times;</button>
     <img id="lightboxImage" class="lightbox-image" src="" alt="">
-    <h2 class="lightbox-title" id="lightboxTitle"></h2>
-    <div class="lightbox-meta">
-      <div class="lightbox-meta-item">
-        <span class="lightbox-meta-label">Issuer</span>
-        <div class="lightbox-meta-value" id="lightboxIssuer"></div>
-      </div>
+    <div class="lightbox-header">
+      <h2 class="lightbox-title" id="lightboxTitle"></h2>
+      <span class="lightbox-issuer" id="lightboxIssuer"></span>
     </div>
     <p class="lightbox-desc" id="lightboxDesc"></p>
   </div>
@@ -454,14 +457,12 @@ function closeLightbox() {
   document.body.style.overflow = '';
 }
 
-// Close lightbox on background click
 document.getElementById('lightbox').addEventListener('click', function(e) {
   if (e.target === this) {
     closeLightbox();
   }
 });
 
-// Close lightbox on Escape key
 document.addEventListener('keydown', function(e) {
   if (e.key === 'Escape') {
     closeLightbox();
@@ -472,11 +473,9 @@ function filterCerts(category) {
   const cards = document.querySelectorAll('.cert-card');
   const buttons = document.querySelectorAll('.filter-btn');
   
-  // Update button states
   buttons.forEach(btn => btn.classList.remove('active'));
   event.target.classList.add('active');
   
-  // Filter cards
   cards.forEach(card => {
     if (category === 'all' || card.dataset.category === category) {
       card.style.display = '';
@@ -486,5 +485,6 @@ function filterCerts(category) {
   });
 }
 </script>
+
 </body>
 </html>
