@@ -4,7 +4,7 @@
   <link rel="icon" type="image/jpeg" href="JG.jpg">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-  <title>Abdoulaye Koïta · My portofolio</title>
+  <title>Abdoulaye Koïta · My portfolio</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Spectral:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -25,7 +25,6 @@
       --sans: 'IBM Plex Sans', Arial, sans-serif;
       --mono: 'IBM Plex Mono', monospace;
     }
-
     * { box-sizing: border-box; }
     html { scroll-behavior: smooth; }
     body {
@@ -37,62 +36,46 @@
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-    a {
-      color: var(--slate);
-      text-decoration: none;
-      transition: color 0.2s ease, border-color 0.2s ease;
-    }
+    a { color: var(--slate); text-decoration: none; transition: color 0.2s ease, border-color 0.2s ease; }
     a:hover { color: var(--ink); }
     img { max-width: 100%; display: block; }
     h1, h2, h3 { margin: 0; }
-
     .nav {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(247, 245, 240, 0.92);
+      background: rgba(247, 245, 240, 0.96);
       backdrop-filter: blur(8px);
       border-bottom: 1px solid var(--line);
     }
     .nav-inner {
-      max-width: 1180px;
+      max-width: 1500px;
       margin: 0 auto;
-      padding: 0.85rem 6vw;
+      padding: 0.85rem 3.2vw;
       display: flex;
-      align-items: baseline;
+      align-items: center;
       justify-content: space-between;
       gap: 1.5rem;
     }
     .nav-mark {
       font-family: var(--serif);
-      font-size: 1.05rem;
+      font-size: 1.4rem;
       font-weight: 600;
       color: var(--ink);
       white-space: nowrap;
     }
-    .nav-mark a { color: var(--ink); border: none; }
+    .nav-mark a { color: var(--ink); }
     .nav-mark span { color: var(--brass); }
     .nav-links {
       display: flex;
-      gap: 1.6rem;
+      gap: clamp(0.8rem, 2vw, 2rem);
       flex-wrap: wrap;
       justify-content: flex-end;
-      font-size: 0.86rem;
+      font-size: 1rem;
     }
-    .nav-links a {
-      color: var(--text-dim);
-      border: none;
-      white-space: nowrap;
-      padding-bottom: 2px;
-    }
+    .nav-links a { color: var(--text-dim); white-space: nowrap; padding: 0.25rem 0; }
     .nav-links a:hover { color: var(--ink); }
-
-    .sheet {
-      max-width: 1180px;
-      margin: 0 auto;
-      padding: 0 6vw;
-    }
-
+    .sheet { max-width: 1180px; margin: 0 auto; padding: 0 6vw; }
     .hero {
       padding: 4.5rem 0 3.5rem;
       display: grid;
@@ -109,13 +92,7 @@
       margin: 0 0 1.2rem;
       max-width: 14ch;
     }
-    .hero-dek {
-      font-size: 1.08rem;
-      color: var(--text-dim);
-      max-width: 46ch;
-      margin: 0 0 2rem;
-      line-height: 1.65;
-    }
+    .hero-dek { font-size: 1.08rem; color: var(--text-dim); max-width: 46ch; margin: 0 0 2rem; line-height: 1.65; }
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
@@ -128,304 +105,46 @@
     }
     .hero-meta div { display: flex; gap: 0.5em; }
     .hero-meta b { color: var(--ink); font-weight: 500; }
-
-    .hero-portrait {
-      width: min(100%, 360px);
-      margin-left: auto;
-    }
-    .portrait-frame {
-      aspect-ratio: 4 / 5;
-      width: 100%;
-      overflow: hidden;
-      border: 1px solid var(--line-strong);
-      background: var(--paper-dim);
-    }
-    .portrait-frame img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: 50% 22%;
-    }
-
-    .rule {
-      border: none;
-      border-top: 1px solid var(--line);
-      margin: 0;
-    }
-
+    .hero-portrait { width: min(100%, 360px); margin-left: auto; }
+    .portrait-frame { aspect-ratio: 4 / 5; width: 100%; overflow: hidden; border: 1px solid var(--line-strong); background: var(--paper-dim); }
+    .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
+    .rule { border: none; border-top: 1px solid var(--line); margin: 0; }
     .section-link {
       display: inline-block;
       padding: 1rem 2rem;
-      margin: 2rem 0;
+      margin: 0.5rem 0;
       background: var(--brass-soft);
       color: var(--ink);
       border-radius: 4px;
       border: none;
-      cursor: pointer;
       transition: background 0.2s ease, color 0.2s ease;
       font-weight: 500;
     }
-    .section-link:hover {
-      background: var(--brass);
-      color: white;
+    .section-link:hover { background: var(--brass); color: white; }
+    .portfolio-links { text-align: center; padding: 4rem 6vw; }
+    .portfolio-links h2 { font-family: var(--serif); font-size: 1.8rem; margin-bottom: 2rem; color: var(--ink); }
+    .link-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }
+    @media (max-width: 900px) {
+      .nav-inner { align-items: flex-start; flex-direction: column; gap: 0.4rem; }
+      .nav-links { justify-content: flex-start; gap: 0.35rem 1.1rem; }
     }
-
-    .portfolio-links {
-      text-align: center;
-      padding: 4rem 6vw;
-    }
-    .portfolio-links h2 {
-      font-family: var(--serif);
-      font-size: 1.8rem;
-      margin-bottom: 2rem;
-      color: var(--ink);
-    }
-    .link-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 1rem;
-    }
-
-    .section {
-      padding: 3.6rem 0;
-      border-top: 1px solid var(--line);
-    }
-    .section-head {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 2rem;
-      align-items: baseline;
-      margin-bottom: 2.4rem;
-    }
-    .section-num {
-      font-family: var(--mono);
-      font-size: 0.78rem;
-      color: var(--brass);
-      letter-spacing: 0.03em;
-    }
-    .section-title {
-      font-family: var(--serif);
-      font-weight: 500;
-      font-size: clamp(1.5rem, 2.6vw, 2rem);
-      color: var(--ink);
-      margin: 0;
-      grid-column: 2;
-    }
-    .section-sub {
-      grid-column: 2;
-      color: var(--text-dim);
-      font-size: 0.98rem;
-      max-width: 60ch;
-      margin: 0.6rem 0 0;
-    }
-
-    .content-grid {
-      display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 2rem;
-    }
-    .content-grid > .rail { padding-top: 0.2rem; }
-
-    /* Certifications Gallery */
-    .cert-filters {
-      display: flex;
-      gap: 0.8rem;
-      flex-wrap: wrap;
-      margin-bottom: 2rem;
-    }
-    .filter-btn {
-      padding: 0.55rem 1.2rem;
-      background: var(--paper-dim);
-      color: var(--text);
-      border: 1px solid var(--line-strong);
-      border-radius: 4px;
-      cursor: pointer;
-      font-family: var(--sans);
-      font-size: 0.9rem;
-      transition: all 0.2s ease;
-      font-weight: 500;
-    }
-    .filter-btn:hover {
-      background: var(--brass-soft);
-      color: var(--ink);
-    }
-    .filter-btn.active {
-      background: var(--brass);
-      color: white;
-      border-color: var(--brass);
-    }
-
-    .cert-gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 1.6rem;
-    }
-    .cert-card {
-      background: var(--paper);
-      border: 1px solid var(--line-strong);
-      border-radius: 4px;
-      overflow: hidden;
-      cursor: pointer;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-    .cert-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(11, 28, 44, 0.1);
-    }
-
-    .cert-thumb {
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      background: linear-gradient(135deg, var(--brass-soft), var(--paper-dim));
-      overflow: hidden;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 0.72rem;
-      color: var(--ink);
-      font-weight: 600;
-      text-align: center;
-      padding: 1rem;
-    }
-    .cert-thumb img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .cert-info {
-      padding: 1.2rem;
-    }
-    .cert-issuer {
-      font-family: var(--mono);
-      font-size: 0.68rem;
-      color: var(--brass);
-      text-transform: uppercase;
-      letter-spacing: 0.04em;
-      margin-bottom: 0.5rem;
-    }
-    .cert-title {
-      font-family: var(--serif);
-      font-weight: 600;
-      font-size: 1.02rem;
-      color: var(--ink);
-      margin: 0 0 0.35rem;
-      line-height: 1.3;
-    }
-    .cert-desc {
-      font-size: 0.9rem;
-      color: var(--text-dim);
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    /* Lightbox Modal */
-    .lightbox {
-      display: none;
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.8);
-      z-index: 9999;
-      align-items: center;
-      justify-content: center;
-      padding: 1rem;
-    }
-    .lightbox.active {
-      display: flex;
-    }
-    .lightbox-content {
-      position: relative;
-      background: var(--paper);
-      border-radius: 4px;
-      padding: 2rem;
-      max-width: 90vw;
-      max-height: 90vh;
-      overflow: auto;
-    }
-    .lightbox-image {
-      max-width: 100%;
-      max-height: 70vh;
-      object-fit: contain;
-      margin-bottom: 1.5rem;
-      border-radius: 4px;
-    }
-    .lightbox-header {
-      margin-bottom: 1.5rem;
-    }
-    .lightbox-title {
-      font-family: var(--serif);
-      font-size: 1.35rem;
-      font-weight: 600;
-      color: var(--ink);
-      margin: 0 0 0.5rem;
-    }
-    .lightbox-issuer {
-      font-family: var(--mono);
-      font-size: 0.8rem;
-      color: var(--brass);
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-    .lightbox-desc {
-      font-size: 0.95rem;
-      color: var(--text-dim);
-      line-height: 1.7;
-      max-width: 70ch;
-      margin: 0;
-    }
-    .lightbox-close {
-      position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: none;
-      border: none;
-      font-size: 1.8rem;
-      color: var(--slate);
-      cursor: pointer;
-      line-height: 1;
-      transition: color 0.2s ease;
-    }
-    .lightbox-close:hover {
-      color: var(--ink);
-    }
-
     @media (max-width: 720px) {
-      .section-head, .content-grid {
-        grid-template-columns: 1fr;
-        gap: 0.6rem;
-      }
-      .section-title, .section-sub { grid-column: 1; }
-      .hero {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-      .hero-portrait {
-        width: min(100%, 300px);
-        margin: 0 auto;
-      }
-      .cert-gallery {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 1rem;
-      }
-      .lightbox-content {
-        padding: 1.5rem;
-      }
+      .hero { grid-template-columns: 1fr; gap: 2rem; }
+      .hero-portrait { width: min(100%, 300px); margin: 0 auto; }
+      .nav-inner { padding: 0.75rem 6vw; }
+      .nav-links { font-size: 0.92rem; }
     }
   </style>
 </head>
 <body>
-
 <nav class="nav">
   <div class="nav-inner">
     <div class="nav-mark"><a href="index.html">A. Koïta<span>.</span></a></div>
-    <div class="nav-links">
+    <div class="nav-links" aria-label="Portfolio sections">
       <a href="background.html">Background</a>
       <a href="research.html">Research</a>
       <a href="projects.html">Projects</a>
+      <a href="experience.html">Experience</a>
       <a href="honors.html">Honors</a>
       <a href="leadership.html">Leadership</a>
       <a href="skills.html">Skills</a>
@@ -436,12 +155,11 @@
 </nav>
 
 <div class="sheet">
-
   <header class="hero">
     <div>
       <h1>Abdoulaye Koïta</h1>
       <p class="hero-dek">
-       I am currently a 4th-year Engineering Physics student at UM6P, leveraging Python-based machine learning, C++, research and computing tools to solve complex scientific and engineering problems.
+        I am currently a 4th-year Engineering Physics student at UM6P, leveraging Python-based machine learning, C++, research and computing tools to solve complex scientific and engineering problems.
       </p>
       <div class="hero-meta">
         <div><b>Level</b> 4th-year engineering student</div>
@@ -454,9 +172,7 @@
       </div>
     </div>
   </header>
-
   <hr class="rule">
-
 </div>
 
 <div class="sheet portfolio-links">
@@ -465,6 +181,7 @@
     <a class="section-link" href="background.html">Background</a>
     <a class="section-link" href="research.html">Research</a>
     <a class="section-link" href="projects.html">Projects</a>
+    <a class="section-link" href="experience.html">Experience</a>
     <a class="section-link" href="honors.html">Honors</a>
     <a class="section-link" href="leadership.html">Leadership</a>
     <a class="section-link" href="skills.html">Skills</a>
@@ -472,6 +189,5 @@
     <a class="section-link" href="contact.html">Contact</a>
   </div>
 </div>
-
 </body>
 </html>
