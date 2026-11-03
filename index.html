@@ -75,12 +75,51 @@
     }
     .nav-links a { color: var(--text-dim); white-space: nowrap; padding: 0.25rem 0; }
     .nav-links a:hover { color: var(--ink); }
+    .top-photo {
+      position: relative;
+      min-height: clamp(300px, 42vw, 560px);
+      overflow: hidden;
+      background: var(--ink);
+      isolation: isolate;
+    }
+    .top-photo img {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      width: 100%;
+      height: 100%;
+      max-width: none;
+      object-fit: cover;
+      object-position: center 45%;
+    }
+    .top-photo::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg, rgba(11, 28, 44, 0.72), rgba(11, 28, 44, 0.1) 78%);
+    }
+    .top-photo-caption {
+      width: min(1180px, 100%);
+      min-height: inherit;
+      margin: 0 auto;
+      padding: 2rem 6vw;
+      display: flex;
+      align-items: flex-end;
+      color: #fff;
+    }
+    .top-photo-caption p {
+      margin: 0;
+      font: 500 clamp(1.7rem, 4vw, 3.2rem)/1.15 var(--serif);
+      max-width: 16ch;
+      text-shadow: 0 2px 18px rgba(0, 0, 0, 0.25);
+    }
     .sheet { max-width: 1180px; margin: 0 auto; padding: 0 6vw; }
     .hero {
-      padding: 4.5rem 0 3.5rem;
+      padding: 3.5rem 0;
       display: grid;
-      grid-template-columns: 1.6fr 1fr;
-      gap: 4vw;
+      grid-template-columns: 1fr;
+      gap: 2rem;
       align-items: center;
     }
     .hero h1 {
@@ -92,7 +131,7 @@
       margin: 0 0 1.2rem;
       max-width: 14ch;
     }
-    .hero-dek { font-size: 1.08rem; color: var(--text-dim); max-width: 46ch; margin: 0 0 2rem; line-height: 1.65; }
+    .hero-dek { font-size: 1.08rem; color: var(--text-dim); max-width: 62ch; margin: 0 0 2rem; line-height: 1.65; }
     .hero-meta {
       display: flex;
       flex-wrap: wrap;
@@ -105,9 +144,6 @@
     }
     .hero-meta div { display: flex; gap: 0.5em; }
     .hero-meta b { color: var(--ink); font-weight: 500; }
-    .hero-portrait { width: min(100%, 360px); margin-left: auto; }
-    .portrait-frame { aspect-ratio: 4 / 5; width: 100%; overflow: hidden; border: 1px solid var(--line-strong); background: var(--paper-dim); }
-    .portrait-frame img { width: 100%; height: 100%; object-fit: cover; object-position: 50% 22%; }
     .rule { border: none; border-top: 1px solid var(--line); margin: 0; }
     .section-link {
       display: inline-block;
@@ -129,10 +165,12 @@
       .nav-links { justify-content: flex-start; gap: 0.35rem 1.1rem; }
     }
     @media (max-width: 720px) {
-      .hero { grid-template-columns: 1fr; gap: 2rem; }
-      .hero-portrait { width: min(100%, 300px); margin: 0 auto; }
       .nav-inner { padding: 0.75rem 6vw; }
       .nav-links { font-size: 0.92rem; }
+      .top-photo { min-height: 340px; }
+      .top-photo img { object-position: center; }
+      .top-photo-caption { padding: 1.5rem 6vw; }
+      .hero { padding: 2.5rem 0; }
     }
   </style>
 </head>
@@ -154,8 +192,15 @@
   </div>
 </nav>
 
+<header class="top-photo" aria-label="Homepage feature image">
+  <img src="EM.jpeg" alt="Abdoulaye Koïta">
+  <div class="top-photo-caption">
+    <p>Science, engineering &amp; discovery</p>
+  </div>
+</header>
+
 <div class="sheet">
-  <header class="hero">
+  <section class="hero">
     <div>
       <h1>Abdoulaye Koïta</h1>
       <p class="hero-dek">
@@ -166,12 +211,7 @@
         <div><b>Location</b> Morocco</div>
       </div>
     </div>
-    <div class="hero-portrait">
-      <div class="portrait-frame">
-        <img src="AK.jpeg" alt="Portrait of Abdoulaye Koïta">
-      </div>
-    </div>
-  </header>
+  </section>
   <hr class="rule">
 </div>
 
